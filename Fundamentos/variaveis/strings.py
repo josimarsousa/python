@@ -1,7 +1,7 @@
 nome = "fulano"
 
 print(nome)
-fulano
+#fulano
 
 len(nome)
 6
@@ -14,19 +14,19 @@ len("O rato roeu a roupa ")
 a = "ABCDEF"
 
 a[0]
-A
+#A
 
 a[1]
-B
+#B
 
 a[3]
-D
+#D
 
 a[4]
-E
+##E
 
 a[5]
-F
+#F
 
 #concatenaçao
 a + "G"
@@ -36,6 +36,16 @@ a + "H" * 3
 'ABCDEFGHHH'
 
 
+"X" + "-" * 10 + "Y"
+'X----------Y'
+
+nome = "Tiao"
+idade = 20
+print("Joao tem %d anos" % idade )
+
+
+#outro exemplo
+print("%s tem %d anos e apenas R$%5.2f no bolso" % ("Joao", 22, 51.34))
 
 
 
