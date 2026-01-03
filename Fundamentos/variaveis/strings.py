@@ -67,6 +67,15 @@ print("{2} {1} {0} {0}".format("a", "b", "c"))
 #format com f-string
 print(f"{nome} tem {idade} anos e {dinheiro} no bolso.")
 
+#fatiamento de strings
+s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+print(s[0:2])
+print(s[1:2])
+print(s[2:4])
+print(s[0:5])
+print(s[0:25])
+
 
 
 
