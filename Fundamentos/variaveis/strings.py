@@ -59,7 +59,10 @@ print("{:12} tem {:3} anos e R${:5.3f} no bolso".format(nome, idade, dinheiro))
 #outro exemplo com mascaras
 print("{:<12s} tem {:<3} anos e R${:5.2f} no bolso".format(nome, idade, dinheiro))
 
-
+#format com posicao do parametros
+print("{0} {1} {2}".format("a", "b", "c"))
+print("{1} {0} {2}".format("a", "b", "c"))
+print("{2} {1} {0} {0}".format("a", "b", "c"))
 
 
 
