@@ -47,7 +47,13 @@ print("Joao tem %d anos" % idade )
 #outro exemplo
 print("%s tem %d anos e apenas R$%5.2f no bolso" % ("Joao", 22, 51.34))
 
+#forma mais moderna de concatenacao com o metodo format
 
+nome = "joao"
+idade  = 22
+dinheiro = 52.00
+
+print("{} tem {} anos e {} no bolso. ".format(nome, idade, dinheiro))
 
 
 
