@@ -54,6 +54,10 @@ idade  = 22
 dinheiro = 52.00
 
 print("{} tem {} anos e {} no bolso. ".format(nome, idade, dinheiro))
+#exemplo com mascaras
+print("{:12} tem {:3} anos e R${:5.3f} no bolso".format(nome, idade, dinheiro))
+#outro exemplo com mascaras
+print("{:<12s} tem {:<3} anos e R${:5.2f} no bolso".format(nome, idade, dinheiro))
 
 
 
