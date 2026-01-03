@@ -64,6 +64,9 @@ print("{0} {1} {2}".format("a", "b", "c"))
 print("{1} {0} {2}".format("a", "b", "c"))
 print("{2} {1} {0} {0}".format("a", "b", "c"))
 
+#format com f-string
+print(f"{nome} tem {idade} anos e {dinheiro} no bolso.")
+
 
 
 
