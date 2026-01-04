@@ -100,6 +100,13 @@ compra = 0
 print(divida)
 
 
+#funcao input
+x = input("Digite um número: ")
+print(x)
 
+#outro exemplo de input
+nome = input("Digite um nome: ")
+print(f"Você digitou {nome}")
+print(f"Olá , {nome}!")
 
 
