@@ -109,4 +109,10 @@ nome = input("Digite um nome: ")
 print(f"Você digitou {nome}")
 print(f"Olá , {nome}!")
 
+#conversão de entrada de dados
+anos = int(input("Anos de serviço: "))
+valor_por_ano = float(input("Valor por ano de serviço: "))
+bonus = anos * valor_por_ano
+print(f"O bonus é de R${bonus:.2f}")
+
 
