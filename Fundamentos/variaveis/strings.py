@@ -79,6 +79,27 @@ print(s[:])
 print(s[-28:7])
 print(s[-1:])
 
+#segmentando strings
+print(s[0:26:2])
+print(s[::2])
+print(s[1:26:2])
+print(s[::-1])
+
+#sequencia de tempos
+divida = 0
+compra = 100
+divida += compra
+print(divida)
+compra = 200
+divida += compra
+print(divida)
+compra = 300
+divida += compra
+print(divida)
+compra = 0
+print(divida)
+
+
 
 
 
