@@ -29,3 +29,14 @@ print(f"O preco da mercadoria é de {preco:.2f}")
 print(f"O desconto é de {desconto:.0f}%")
 preco_com_desconto = preco - preco * desconto / 100
 print(f"O preco com desconto é de {preco_com_desconto:.2f}")
+
+#calcular o tempo de uma viagem
+distancia = float(input("Digite a distancia em km: "))
+velocidade = float(input("Digite a velocidade em km/h: "))
+tempo = distancia / velocidade
+print(f"O tempo de viagem é de {tempo:.2f} horas")
+
+#conversão de temperatura de celsius para fahrenheit
+celsius = float(input("Digite a temperatura em celsius: "))
+fahrenheit = celsius * 9/5 + 32
+print(f"{celsius} graus celsius é igual a {fahrenheit:.2f} graus fahrenheit")
