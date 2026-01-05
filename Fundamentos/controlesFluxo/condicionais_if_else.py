@@ -29,3 +29,16 @@ else:
     preco = km * 0.45
 
 print(f"O passageiro {nome_passageiro} de {origem} para {destino} percorreu {km:.2f} km e pagará R${preco:.2f}")
+
+#if_else aninhados - Conta de telefone dom tres faixas de precos
+minutos = int(input("Digite a quantidade de minutos utilizados: "))
+
+if minutos <= 200:
+    preco = minutos * 0.20
+else:
+    if minutos <= 400:
+        preco = minutos * 0.15
+    else:
+        preco = minutos * 0.10
+
+print(f"Você vai pagar este mês: R${preco:.2f}")
