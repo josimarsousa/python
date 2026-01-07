@@ -42,3 +42,19 @@ else:
         preco = minutos * 0.10
 
 print(f"Você vai pagar este mês: R${preco:.2f}")
+
+#elif - soluçao para ifs aninhados
+#categoria x preco usando elif
+categoria  = input("Digite a categoria do produto: ")
+if categoria == 1:
+    preco = 10
+elif categoria == 2:
+    preco = 18
+elif categoria == 3: 
+    preco = 23
+elif categoria == 4:
+    preco = 26
+else: 
+    print("Categoria inválida, digite um valor entre 1 e 4!")
+    preco = 0
+print(f"O preço do produto é: R${preco:.2f}")
