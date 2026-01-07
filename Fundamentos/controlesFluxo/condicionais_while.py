@@ -29,7 +29,7 @@ while n <= 10:
     soma = soma + x
     n = n + 1
 print(f"Soma: {soma}")
-"""
+
 #calculo de media com acumuladores que nada mais é do que uma variavel registrando os dados recebidos.
 x = 1
 soma = 0
@@ -39,3 +39,12 @@ while x <= 5:
     soma = soma + n
     x = x + 1
 print(f"Média: {soma / 5}")
+"""
+#interrompendo um laço while
+s = 0 
+while True:
+    v = int(input("Digite um número a soma ou 0 para sair: "))
+    if v == 0:
+        break
+    s += v
+print(f"Soma: {s}")
