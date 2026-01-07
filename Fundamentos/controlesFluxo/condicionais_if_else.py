@@ -45,7 +45,7 @@ print(f"Você vai pagar este mês: R${preco:.2f}")
 
 #elif - soluçao para ifs aninhados
 #categoria x preco usando elif
-categoria  = input("Digite a categoria do produto: ")
+categoria  = int(input("Digite a categoria do produto: "))
 if categoria == 1:
     preco = 10
 elif categoria == 2:
