@@ -73,3 +73,14 @@ while True:
        elif atual == 5:
         atual = 1
        cédulas = 0 
+
+
+#instruçoes aninhadas
+#tabuada com instruçoes aninhadas
+tabuada = 1
+while tabuada <=10:
+    número = 1
+    while número <= 10:
+        print(f"{tabuada} x {número} = {tabuada * número}")
+        número += 1
+    tabuada += 1
