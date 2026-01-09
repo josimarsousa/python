@@ -84,3 +84,10 @@ while tabuada <=10:
         print(f"{tabuada} x {número} = {tabuada * número}")
         número += 1
     tabuada += 1
+
+#F-Strings
+a = "mundo"
+print(f"olá {a}")
+
+numero = 10
+print(f"o número é: {numero :.2f}")
