@@ -35,7 +35,7 @@ while x < 5:
     print(f"nota {x+1} = {notas[x]:6.2f}")
     x += 1
 print(f"Média: {soma / x:5.2f}")
-"""
+
 #apresentaçao de números
 numeros = [0, 0, 0, 0, 0]
 x = 0
@@ -47,3 +47,11 @@ while True:
     if escolhido == 0:
         break
     print(f"Você escolheu o númro: {numeros[escolhido-1]}")
+"""
+#fatiamento de listas e copia
+L = [1,2,3]
+x = 0
+while x < 3:
+    print(L[x])
+    x += 1
+print(L[0:3])
