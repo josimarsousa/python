@@ -76,4 +76,24 @@ x = 0
 while x < len(L):
     print(L[x])
     x += 1
-        
+
+#exercicios de listas
+nomes = []
+sobrenomes = []
+nome_completos = []
+while True: 
+    nome = input("Digite um nome (s para sair): ")
+    if nome == "s":
+        print("Você saiu do sistema com segurança.")
+        break
+    nomes.append(nome)
+    sobrenome = input("Digite agora o sobrenome: ")
+    sobrenomes.append(sobrenome)
+    nome_completos.append(nome + " " + sobrenome)
+x = 0
+while x < len(nomes):
+    print(nomes[x])
+    print(sobrenomes[x])
+    print(nome_completos[x])
+    x += 1
+print(nomes, sobrenomes, nome_completos)        
