@@ -47,7 +47,7 @@ while True:
     if escolhido == 0:
         break
     print(f"Você escolheu o númro: {numeros[escolhido-1]}")
-"""
+
 #fatiamento de listas e copia
 L = [1,2,3]
 x = 0
@@ -56,10 +56,24 @@ while x < 3:
     x += 1
 print(L[0:3])
 
-#usando a funcal Len()
+#usando a funcao Len()
 L = [1, 2, 3]
 x = 0
 while x < len(L):
     print(L[x])
     x += 1
 print(L[0:len(L)])
+"""
+#adicionando elementos na lista
+L = []
+while True:
+    n = int(input("Digite um número (0 para sair): "))
+    if n == 0:
+        print("Voce sair do sistema")
+        break
+    L.append(n)
+x = 0
+while x < len(L):
+    print(L[x])
+    x += 1
+        
