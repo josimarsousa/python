@@ -63,7 +63,7 @@ while x < len(L):
     print(L[x])
     x += 1
 print(L[0:len(L)])
-"""
+
 #adicionando elementos na lista
 L = []
 while True:
@@ -97,3 +97,8 @@ while x < len(nomes):
     print(nome_completos[x])
     x += 1
 print(nomes, sobrenomes, nome_completos)        
+"""
+#removendo elementos da lista
+L = ["a", "b", "c"]
+del L[0]
+print(L)
