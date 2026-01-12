@@ -102,3 +102,9 @@ print(nomes, sobrenomes, nome_completos)
 L = ["a", "b", "c"]
 del L[0]
 print(L)
+
+#apagando fatias inteiras
+L = list(range(101))
+print(L)
+del L[0:99]
+print(L)
