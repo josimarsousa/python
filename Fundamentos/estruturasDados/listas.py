@@ -97,7 +97,7 @@ while x < len(nomes):
     print(nome_completos[x])
     x += 1
 print(nomes, sobrenomes, nome_completos)        
-"""
+
 #removendo elementos da lista
 L = ["a", "b", "c"]
 del L[0]
@@ -108,3 +108,29 @@ L = list(range(101))
 print(L)
 del L[0:99]
 print(L)
+"""
+#usando lista como fila
+#simulando uma fila de banco
+ultimo = 0
+fila = list(range(1, ultimo + 1))
+while True:
+    print(f"\nExistem {len(fila)} clientes na fila")
+    print(f"fila atual: {fila}")
+    print(f"Digite C para adicionar um cliente á fila, ")
+    print(f"ou A para realizar o atendimento. S para sair.")
+    operacao = input("Qual a operação desejada? (C, A ou S)")
+    if operacao == "A":
+        if len(fila) > 0:
+            atendido = fila.pop(0)
+            print(f"Cliente {atendido} atendido.")
+        else:
+            print("Fila vazia! Ninguém para ser atendido.")
+    elif operacao == "C":
+        ultimo += 1 #incrementa o ticket de novo cliente
+        fila.append(ultimo) #adicionando o novo cliente á fila
+    
+    elif operacao == "S":
+        print("Saindo do sistema...")
+        break
+    else: 
+        print("Operação inválida! Digite apenas A, C ou S.")
