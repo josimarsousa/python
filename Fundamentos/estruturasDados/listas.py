@@ -108,7 +108,7 @@ L = list(range(101))
 print(L)
 del L[0:99]
 print(L)
-"""
+
 #usando lista como fila
 #simulando uma fila de banco
 ultimo = 0
@@ -134,3 +134,28 @@ while True:
         break
     else: 
         print("Operação inválida! Digite apenas A, C ou S.")
+"""
+#usando lista como pilha
+#simulando uma pilha de pratos
+prato = 5
+pilha = list(range(1, prato + 1))
+print(range(1, prato + 1))
+while True:
+    print(f"nExistem {len(pilha)} pratos na pilha")
+    print(f"Pilha atual: {pilha}")
+    print(f"Digite E para empilhar um novo prato,")
+    print(f"ou D para desempilhar um prato. S para sair.")
+    operacao = input("Operaçao (E, D ou S):")
+    if operacao == "D":
+        if len(pilha) > 0:
+            lavado = pilha.pop(-1)
+            print(f"Prato {lavado} lavado.")
+        else:
+            print("Pilha vazia! Nenhum prato para ser lavado.")
+    elif operacao == "E":
+        prato +=1 #novo prato
+        pilha.append(prato)
+    elif operacao == "S":
+        break
+    else:
+        print("Operaçao inválida! Digite apenas E, D ou S.")
