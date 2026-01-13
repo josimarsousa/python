@@ -159,3 +159,19 @@ while True:
         break
     else:
         print("Operaçao inválida! Digite apenas E, D ou S.")
+
+#pesquisa sequencial
+L = [1,2,3,4,5]
+p = int(input("Digite o valor a procurar:"))
+achou = False
+x = 0
+while x < len(L):
+    if L[x] == p:
+        achou = True
+        break
+    x +=1
+if achou:
+    print(f"{p} achado na posiçao {x}")
+else:
+    print(f"{p} não encontrado.")
+        
