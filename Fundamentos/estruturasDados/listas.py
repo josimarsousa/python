@@ -134,7 +134,7 @@ while True:
         break
     else: 
         print("Operação inválida! Digite apenas A, C ou S.")
-"""
+
 #usando lista como pilha
 #simulando uma pilha de pratos
 prato = 5
@@ -174,4 +174,8 @@ if achou:
     print(f"{p} achado na posiçao {x}")
 else:
     print(f"{p} não encontrado.")
-        
+"""        
+#usando o for
+L = [8,9,15]
+for e in L:
+    print(e)
