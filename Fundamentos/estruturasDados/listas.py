@@ -179,3 +179,13 @@ else:
 L = [8,9,15]
 for e in L:
     print(e)
+
+#usando break para interromper for
+L = [7,9,10,12]
+p = int(input("Digite um número a pesquisar"))
+for e in L: #percorrendo a lista
+    if e == p: #se o elemento for igual ao número pesquisado
+        print(f"{p} achado na posição {L.index(e)}") #imprime a posição do elemento
+        break #interrompe o for
+    else:
+        print(f"{p} não encontrado.")
