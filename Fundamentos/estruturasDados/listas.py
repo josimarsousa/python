@@ -189,7 +189,17 @@ for e in L: #percorrendo a lista
         break #interrompe o for
     else:
         print(f"{p} não encontrado.")
-""" 
+
 #usando o range para gerar listas simples
 for v in range(10):
     print(v)
+
+#usando o range a partir de um valor
+for v in range(5, 8):
+    print(v)
+
+""" 
+#acrescentando um parametro a funcao range
+for t in range(3, 33, 3):
+    print(t, end="")
+print()
