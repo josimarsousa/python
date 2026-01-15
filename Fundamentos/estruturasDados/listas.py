@@ -207,4 +207,16 @@ print()
 #transformando range em lista
 L = list(range(100, 1100, 50))
 print(L)
- 
+
+#comparando com funcao enumerate
+L = [5, 9, 13]
+x = 0
+for e in L:
+    print(f"[{x}] {e}")
+    x += 1
+
+#mesmo programa acima com a enumerate
+print("Funcao enumerate:")
+L = [5, 9, 13]
+for x, e in enumerate(L):
+    print(f"[{x}] {e}")
