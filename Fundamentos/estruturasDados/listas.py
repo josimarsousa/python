@@ -174,7 +174,7 @@ if achou:
     print(f"{p} achado na posiçao {x}")
 else:
     print(f"{p} não encontrado.")
-"""        
+       
 #usando o for
 L = [8,9,15]
 for e in L:
@@ -189,3 +189,7 @@ for e in L: #percorrendo a lista
         break #interrompe o for
     else:
         print(f"{p} não encontrado.")
+""" 
+#usando o range para gerar listas simples
+for v in range(10):
+    print(v)
