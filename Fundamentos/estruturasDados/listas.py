@@ -198,8 +198,13 @@ for v in range(10):
 for v in range(5, 8):
     print(v)
 
-""" 
+
 #acrescentando um parametro a funcao range
 for t in range(3, 33, 3):
     print(t, end="")
 print()
+""" 
+#transformando range em lista
+L = list(range(100, 1100, 50))
+print(L)
+ 
