@@ -232,3 +232,13 @@ for z in enumerate(L):
     x, e = z
     print(f"[{x}] {e}")
     print(z)
+
+#Operações com listas
+#verificanco o maior valor:
+L = [1, 7, 2, 4]
+print(f"Lista: {L}")
+maximo = L[0]
+for e in L:
+    if e > maximo:
+        maximo = e
+print(f"O maior valor até agora é: {maximo}")
