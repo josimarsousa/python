@@ -248,3 +248,16 @@ print(f"O maior valor até agora é: {maximo}")
 #achando o menor valor:
 print(f"O menor valor até agora é: {minimo}")
 
+#copia de elementos para outras listas
+print("Copia de elementos para outras listas, separando pares e ímpares:")
+valores = [1,4,65,667,4,3,5,7,8,9]
+pares = []
+impares = []
+print("Lista: ", valores)
+for e in valores:
+    if e % 2 == 0:
+        pares.append(e)
+    else:
+        impares.append(e)
+print(f"Pares: ", pares)
+print(f"Impares: ", impares)
