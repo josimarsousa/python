@@ -209,6 +209,7 @@ L = list(range(100, 1100, 50))
 print(L)
 
 #comparando com funcao enumerate
+print("For normal:")
 L = [5, 9, 13]
 x = 0
 for e in L:
