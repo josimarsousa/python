@@ -235,10 +235,16 @@ for z in enumerate(L):
 
 #Operações com listas
 #verificanco o maior valor:
-L = [1, 7, 2, 4]
+L = [1, 7, 2, 4, 879, -1]
 print(f"Lista: {L}")
 maximo = L[0]
+minimo = L[0]
 for e in L:
     if e > maximo:
         maximo = e
+    elif e < minimo:
+        minimo = e
 print(f"O maior valor até agora é: {maximo}")
+#achando o menor valor:
+print(f"O menor valor até agora é: {minimo}")
+
