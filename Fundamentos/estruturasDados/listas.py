@@ -247,7 +247,7 @@ for e in L:
 print(f"O maior valor até agora é: {maximo}")
 #achando o menor valor:
 print(f"O menor valor até agora é: {minimo}")
-""" 
+
 #copia de elementos para outras listas
 print("Copia de elementos para outras listas, separando pares e ímpares:")
 valores = [1,4,65,667,4,3,5,7,8,9]
@@ -286,3 +286,10 @@ while True:
         print("Utilizaçao das salas")
         for sala, vagos in enumerate(lugares_vagos):
             print(f"Sala {sala + 1} - {vagos} lugar(es) vazio(s)")
+""" 
+#listas com strings
+print("listas com strings")
+L = ["maça", "pera", "banana", "abacaxi", "uva"]
+print(f"Quantidade de palavras na lista: {len(L)}")
+print(f"Palavras na lista: {L}")
+print(f"Posiçao de cada palavra na lista: {[L.index(e) for e in L]}")
