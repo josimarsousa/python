@@ -203,7 +203,7 @@ for v in range(5, 8):
 for t in range(3, 33, 3):
     print(t, end="")
 print()
-""" 
+
 #transformando range em lista
 import enum
 
@@ -247,7 +247,7 @@ for e in L:
 print(f"O maior valor até agora é: {maximo}")
 #achando o menor valor:
 print(f"O menor valor até agora é: {minimo}")
-
+""" 
 #copia de elementos para outras listas
 print("Copia de elementos para outras listas, separando pares e ímpares:")
 valores = [1,4,65,667,4,3,5,7,8,9]
@@ -261,3 +261,26 @@ for e in valores:
         impares.append(e)
 print(f"Pares: ", pares)
 print(f"Impares: ", impares)
+
+#controle de utilizacao de salas de cinema
+lugares_vagos = [10, 2, 1, 3, 0]
+print("Salas vagas: ", lugares_vagos)
+while True:
+    sala = int(input("Sala (0 sai): "))
+    if sala == 0: 
+        print("Saindo do sistema...")
+        break
+    if sala > len(lugares_vagos) or sala < 1:
+        print("Sala inválida!")
+    elif lugares_vagos[sala - 1] == 0:
+        print("Sala lotada!")
+    else:
+        lugares = int(input(f"Quantos lugares você deseja ({lugares_vagos[sala - 1]} vagos): "))
+        if lugares > lugares_vagos[sala - 1]:
+            print("Esse n;umero de lugares não está disponível.")
+        elif lugares < 0:
+            print("Digite um número válido.")
+        else:
+            lugares_vagos[sala - 1] -= lugares
+            print(f"{lugares} lugares reservados na sala {sala}.")
+print(f"Salas vagas: {lugares_vagos}")
