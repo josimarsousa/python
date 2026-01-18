@@ -319,7 +319,7 @@ if busca in palavras:
     print(f"A palavra {busca} foi encontrada na posição {palavras.index(busca)} da lista")
 else:
     print(f"A palavra {busca} não foi encontrada na lista.")
-"""    
+   
 #listas com elementos diferentes
 produto1 = ["detergente", 2, 2.79]
 produto2 = ["arroz", 1, 18.99]
@@ -353,4 +353,22 @@ soma = 0.0
 for p in compras:
     print(f"{p[0]} - {p[1]:5d} - {p[2]:5.2f} {p[1] * p[2]:5.2f}")
     soma += p[1] * p[2]
+print(f"Total da compra: {soma:5.2f}")
+""" 
+#vizualizando em tempo real o valor da compra
+compras = []
+while True:
+    produto = input("Digite um produto para a lista de compras: ")
+    if produto == "fim":
+        break
+    quantidade = int(input("Digite a quantidade: "))
+    preco = float(input("Digite o preço: "))
+    compras.append([produto, quantidade, preco])
+    soma = 0.0
+    for p in compras:
+        print(f"{p[0]} - {p[1]:5d}x{p[2]:5.2f} {p[1] * p[2]:5.2f}")
+        soma += p[1] * p[2]
+    print(f"Total da compra: {soma:5.2f}")
+for p in compras: 
+    print(f"{p[0]} - {p[1]:3d} x {p[2]:5.2f} {p[1] * p[2]:5.2f}")
 print(f"Total da compra: {soma:5.2f}")
