@@ -293,7 +293,7 @@ L = ["maça", "pera", "banana", "abacaxi", "uva"]
 print(f"Quantidade de palavras na lista: {len(L)}")
 print(f"Palavras na lista: {L}")
 print(f"Posiçao de cada palavra na lista: {[L.index(e) for e in L]}")
-"""
+
 #listas de compras - lendo e imprimindo
 compras = []
 while True:
@@ -307,3 +307,16 @@ for p, compras in enumerate(compras):
     print(f"{p} - {compras}")
 #for p in compras:
 #    print(f"lista de compras: {p}")
+"""
+#listas dentro de listas - acessando strings letra a letra - buscando palavra na lista
+palavras = ["maças", "peras", "abacaxi"]
+#print(palavras[0][0])
+#print(palavras[0][1])
+#print(palavras[1][3])
+#print(palavras[2][4])
+busca = input("Digite uma palavra para buscar:")
+if busca in palavras:
+    print(f"A palavra {busca} foi encontrada na posição {palavras.index(busca)} da lista")
+else:
+    print(f"A palavra {busca} não foi encontrada na lista.")
+    
