@@ -307,7 +307,7 @@ for p, compras in enumerate(compras):
     print(f"{p} - {compras}")
 #for p in compras:
 #    print(f"lista de compras: {p}")
-"""
+
 #listas dentro de listas - acessando strings letra a letra - buscando palavra na lista
 palavras = ["maças", "peras", "abacaxi"]
 #print(palavras[0][0])
@@ -319,4 +319,10 @@ if busca in palavras:
     print(f"A palavra {busca} foi encontrada na posição {palavras.index(busca)} da lista")
 else:
     print(f"A palavra {busca} não foi encontrada na lista.")
-    
+"""    
+#listas com elementos diferentes
+produto1 = ["detergente", 2, 2.79]
+produto2 = ["arroz", 1, 18.99]
+produto3 = ["sabao em po", 1, 27.99]
+compras = [produto1, produto2, produto3]
+print(compras)
