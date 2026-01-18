@@ -372,7 +372,7 @@ while True:
 for p in compras: 
     print(f"{p[0]} - {p[1]:3d} x {p[2]:5.2f} {p[1] * p[2]:5.2f}")
 print(f"Total da compra: {soma:5.2f}")
-"""
+
 #ordenaçao de elementos em uma lista utilizando o buble sort
 L = [1,28,3,3,709,24,2,5,4,4,5]
 fim = len(L)
@@ -412,3 +412,16 @@ while fim > 1:
         break
     fim -= 1
 print(f"Lista depois da ordenação: {L}")
+"""
+#metodo sort() - ordena a lista em ordem crescente
+L = [1,28,3,3,709,24,2,5,4,4,5]
+print(f"Lista antes da ordenação: {L}")
+L.sort()
+print(f"Lista depois da ordenação: {L}")
+
+#funcao sorted() - sem alterar a lista original
+L = [1,28,3,3,709,24,2,5,4,4,5]
+print(f"Lista antes da ordenação: {L}")
+sorted(L)
+print(f"Lista depois da ordenação: {L}")
+
