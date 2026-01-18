@@ -326,3 +326,31 @@ produto2 = ["arroz", 1, 18.99]
 produto3 = ["sabao em po", 1, 27.99]
 compras = [produto1, produto2, produto3]
 print(compras)
+
+#imprimindo elementos diferentes de uma lista 
+for p in compras:
+    print(f"Produto: {p[0]}")
+    print(f"Quantidade: {p[1]}")
+    print(f"Preço: {p[2]:5.2f}")
+    print("------------------")
+
+#calculando o valor total da compra e imprimindo
+total = 0
+for p in compras:
+    total += p[1] * p[2]
+print(f"Total da compra: {total:5.2f}")
+
+#criando o programa completo para gerar a lista de compra com o devido total
+compras = []
+while True:
+    produto = input("Digite um produto para a lista de compras: ")
+    if produto == "fim":
+        break
+    quantidade = int(input("Digite a quantidade: "))
+    preco = float(input("Digite o preço: "))
+    compras.append([produto, quantidade, preco])
+soma = 0.0
+for p in compras:
+    print(f"{p[0]} - {p[1]:5d} - {p[2]:5.2f} {p[1] * p[2]:5.2f}")
+    soma += p[1] * p[2]
+print(f"Total da compra: {soma:5.2f}")
