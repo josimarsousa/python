@@ -286,10 +286,24 @@ while True:
         print("Utilizaçao das salas")
         for sala, vagos in enumerate(lugares_vagos):
             print(f"Sala {sala + 1} - {vagos} lugar(es) vazio(s)")
-""" 
+ 
 #listas com strings
 print("listas com strings")
 L = ["maça", "pera", "banana", "abacaxi", "uva"]
 print(f"Quantidade de palavras na lista: {len(L)}")
 print(f"Palavras na lista: {L}")
 print(f"Posiçao de cada palavra na lista: {[L.index(e) for e in L]}")
+"""
+#listas de compras - lendo e imprimindo
+compras = []
+while True:
+    produto = input("Digite um produto para a lista de compras: ")
+    if produto == "fim":
+        break
+    compras.append(produto)
+print("lista de compras\n")
+for p, compras in enumerate(compras):
+    p = p + 1
+    print(f"{p} - {compras}")
+#for p in compras:
+#    print(f"lista de compras: {p}")
