@@ -264,7 +264,7 @@ print(f"Impares: ", impares)
 
 #controle de utilizacao de salas de cinema
 lugares_vagos = [10, 2, 1, 3, 0]
-print("Salas vagas: ", lugares_vagos)
+
 while True:
     sala = int(input("Sala (0 sai): "))
     if sala == 0: 
@@ -283,4 +283,6 @@ while True:
         else:
             lugares_vagos[sala - 1] -= lugares
             print(f"{lugares} lugares reservados na sala {sala}.")
-print(f"Salas vagas: {lugares_vagos}")
+        print("Utilizaçao das salas")
+        for sala, vagos in enumerate(lugares_vagos):
+            print(f"Sala {sala + 1} - {vagos} lugar(es) vazio(s)")
