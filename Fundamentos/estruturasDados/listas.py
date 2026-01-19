@@ -412,7 +412,7 @@ while fim > 1:
         break
     fim -= 1
 print(f"Lista depois da ordenação: {L}")
-"""
+
 #metodo sort() - ordena a lista em ordem crescente
 L = [1,28,3,3,709,24,2,5,4,4,5]
 print(f"Lista antes da ordenação: {L}")
@@ -424,4 +424,16 @@ L = [1,28,3,3,709,24,2,5,4,4,5]
 print(f"Lista antes da ordenação: {L}")
 sorted(L)
 print(f"Lista depois da ordenação: {L}")
+"""
+
+#dicionarios
+tabela = {
+    "Alface": 2.50,
+    "Mandioca": 60.00,
+    "Couve": 5.00,
+    "Feijão": 10.00
+}
+
+print(tabela["Alface"])
+print(tabela)
 
