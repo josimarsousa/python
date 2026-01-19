@@ -437,3 +437,18 @@ tabela = {
 print(tabela["Alface"])
 print(tabela)
 
+#dicionario - obtençao do preço com um dicionário
+tabela = {
+    "Alface": 2.50,
+    "Mandioca": 60.00,
+    "Couve": 5.00,
+    "Feijão": 10.00
+}
+while True:
+    produto = input("Digite um produto ou digite 'fim' para terminar. ")
+    if produto == "fim":
+        break
+    if produto in tabela:
+        print(f"Preço {tabela[produto]:5.2f}")
+    else:
+        print("Produto não encontrado.")
