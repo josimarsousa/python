@@ -424,7 +424,7 @@ L = [1,28,3,3,709,24,2,5,4,4,5]
 print(f"Lista antes da ordenação: {L}")
 sorted(L)
 print(f"Lista depois da ordenação: {L}")
-"""
+
 
 #dicionarios
 tabela = {
@@ -452,3 +452,4 @@ while True:
         print(f"Preço {tabela[produto]:5.2f}")
     else:
         print("Produto não encontrado.")
+"""
