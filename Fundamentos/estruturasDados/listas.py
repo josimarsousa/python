@@ -452,7 +452,7 @@ while True:
         print(f"Preço {tabela[produto]:5.2f}")
     else:
         print("Produto não encontrado.")
-"""
+
 
 #exemplo de dicionário com operacoes de vendas
 estoque = {
@@ -480,3 +480,13 @@ for operacao in venda:
         print(f"Preço: {dados[1]:6.2f}\n")
         
         print("")
+"""
+
+#exemplo de dicionario sem valor padrao, calculando a ocorrencia de uma letra em uma palavra
+d = {}
+for letra in "abracadabra":
+    if letra in d:
+        d[letra] += 1
+    else:
+        d[letra] = 1
+print(d)
