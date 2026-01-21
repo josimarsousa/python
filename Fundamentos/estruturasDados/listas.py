@@ -453,3 +453,10 @@ while True:
     else:
         print("Produto não encontrado.")
 """
+
+#exemplo de dicionário com operacoes de vendas
+estoque = {
+    "maças": [100, 12.30],
+    "alface": [500, 0.45],
+    "abacaxi": [200]
+}
