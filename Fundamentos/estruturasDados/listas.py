@@ -496,3 +496,18 @@ d = {}
 for letra in "abracadabra":
     d[letra] = d.get(letra, 0) + 1
 print(d)
+
+#tuplas em python
+tupla = ("a", "b", "c", "d", "e")
+print(tupla)
+
+#o parenteses sao opcionais
+tupla = "a", "b", "c", "d", "e"
+print(tupla)
+
+#tuplas soportam a maior parte das operaçoes de listas
+print("tuplas suportam a maior parte das operaçoes de listas")
+print(tupla[0])
+print(tupla[2])
+print(tupla[1:])
+print(len(tupla))
