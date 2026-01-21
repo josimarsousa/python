@@ -490,3 +490,9 @@ for letra in "abracadabra":
     else:
         d[letra] = 1
 print(d)
+
+#exemplo de dicionário com valor padrao usando o método get do dicionário.
+d = {}
+for letra in "abracadabra":
+    d[letra] = d.get(letra, 0) + 1
+print(d)
