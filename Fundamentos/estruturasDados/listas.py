@@ -540,3 +540,10 @@ print("tamanho do conjunto b:", len(b))
 #uniao de conjuntos com o operador |
 print("uniao de conjuntos com o operador |")
 print(a | b)
+
+#outros métodos 
+print("intersecção de conjuntos com o operador &")
+print(a & b)
+
+print("Uniao com metodo union")
+print(a.union(b))
