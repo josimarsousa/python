@@ -525,3 +525,11 @@ if 9 in a:
     print("1 está em a")
 else:
     print("1 não está em a")
+
+#conjuntos set - podemos criar listas com estruturas de dados
+print("conjuntos set - podemos criar listas com estruturas de dados")
+b = set([1,2,3,4,5])
+print(b)
+
+#mostrando o tamanho da estrutura conjunto com propriedades de set
+print("tamanho do conjunto b:", len(b))
