@@ -514,11 +514,11 @@ print(len(tupla))
 """
 #conjuntos set
 a = set()
-a.add(1)
-a.add(2)
-a.add(3)
-a.add(4)
-a.add(5)
+a.add(11)
+a.add(12)
+a.add(13)
+a.add(14)
+a.add(15)
 print(a)
 
 if 9 in a:
@@ -528,8 +528,15 @@ else:
 
 #conjuntos set - podemos criar listas com estruturas de dados
 print("conjuntos set - podemos criar listas com estruturas de dados")
-b = set([1,2,3,4,5])
+b = set([1,2,3,4,5,7,8,9,10])
 print(b)
 
 #mostrando o tamanho da estrutura conjunto com propriedades de set
 print("tamanho do conjunto b:", len(b))
+
+#uniao de conjuntos com o operador |
+
+
+#uniao de conjuntos com o operador |
+print("uniao de conjuntos com o operador |")
+print(a | b)
