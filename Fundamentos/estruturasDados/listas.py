@@ -480,7 +480,7 @@ for operacao in venda:
         print(f"Preço: {dados[1]:6.2f}\n")
         
         print("")
-"""
+
 
 #exemplo de dicionario sem valor padrao, calculando a ocorrencia de uma letra em uma palavra
 d = {}
@@ -511,3 +511,17 @@ print(tupla[0])
 print(tupla[2])
 print(tupla[1:])
 print(len(tupla))
+"""
+#conjuntos set
+a = set()
+a.add(1)
+a.add(2)
+a.add(3)
+a.add(4)
+a.add(5)
+print(a)
+
+if 9 in a:
+    print("1 está em a")
+else:
+    print("1 não está em a")
