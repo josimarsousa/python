@@ -547,3 +547,9 @@ print(a & b)
 
 print("Uniao com metodo union")
 print(a.union(b))
+
+#diferença simétrica de conjuntos com o operador ^
+print("diferença simétrica de conjuntos com o operador ^")
+print(a.symmetric_difference(b))
+print("ou")
+print(a ^ b)
