@@ -553,3 +553,49 @@ print("diferença simétrica de conjuntos com o operador ^")
 print(a.symmetric_difference(b))
 print("ou")
 print(a ^ b)
+
+#programa jogo da forca
+palavra = input("Digite uma palavra: ")
+for x in range(100):
+    print()
+digitada = []
+acertos = []
+erros = 0
+while True:
+    senha = ""
+    for letra in palavra:
+        senha += letra if letra in acertos else "."
+        print(senha)
+        if senha == palavra:
+            print("Você acertou a palavra!")
+            break
+        tentativa = input("\nDigite uma letra: ")
+        if tentativa in digitada:
+            print("Você ja tentou esta letra")
+            continue
+        else:
+            digitada += tentativa
+            if tentativa in palavra:
+                acertos += tentativa
+            else:
+                erros += 1
+                print("Você errou!")
+            print("X==:==\nX  :  ")
+            print("X 0 " if erros >= 1 else "X")
+            linha2 = ""
+            if erros >= 2:
+                linha2 = " | "
+            if erros == 3:
+                linha2 = " \| "
+            if erros == 4:
+                linha2 = " \|/ "
+            print(f"X{linha2}")
+            linha3 = ""
+            if erros == 5:
+                linha3 += " / "
+            elif erros >= 6:
+                linha3 += " /\ "
+            print("X\n==========")
+            if erros == 6:
+                print("Você foi enforcado!")
+                break
