@@ -30,7 +30,7 @@ def maior_menor(num1, num2):
 num1 = int(input("Digite o primeiro numero: "))
 num2 = int(input("Digite o segundo numero: "))
 print(maior_menor(num1, num2))
-"""
+
 
 #funcao para verificar se numero1 é múltiplo de numero2
 def multiplo(num1, num2):
@@ -46,3 +46,43 @@ if multiplo(num1, num2) == True:
     print(f"{num1} é múltiplo de {num2}")
 else:
     print(f"{num1} não é múltiplo de {num2}")
+"""
+
+#pesquisa em uma lista
+def pesquisa(lista, valor):
+    for x, e in enumerate(lista):
+        if e == valor:
+            return x
+    return None
+
+
+L = [10, 20, 25, 30]
+print(pesquisa(L, 10))
+print(pesquisa(L, 20))
+print(pesquisa(L, 30))
+
+
+#calculando a media de 2 valores de uma lista
+def soma(L):
+    total = 0
+    for n in L:
+        total += n
+    return total
+
+def media(L):
+    return soma(L) / len(L)
+
+print(f"A soma da lista {L}", soma(L))
+print(f"A média da lista {L}", media(L))
+
+
+#calculando o fatorial de um número: 
+def fatorial(n):
+    fat = 1
+    while n > 1:
+        fat *= n
+        n -= 1
+    return print(f"O fatorial de {numero} é: {fat}")
+
+numero= int(input(f"Digite um número para calcular o fatorial: "))
+fator = fatorial(numero)    
