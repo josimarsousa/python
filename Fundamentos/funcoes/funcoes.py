@@ -19,7 +19,7 @@ print(par_impar(3))
 print(par_impar(4))
 print(par_impar(5))
 print(par_impar(6))
-"""
+
 #funcao para verificar se numero é maior de 2 números
 def maior_menor(num1, num2):
     if num1 > num2:
@@ -30,3 +30,19 @@ def maior_menor(num1, num2):
 num1 = int(input("Digite o primeiro numero: "))
 num2 = int(input("Digite o segundo numero: "))
 print(maior_menor(num1, num2))
+"""
+
+#funcao para verificar se numero1 é múltiplo de numero2
+def multiplo(num1, num2):
+    if num1 % num2 == 0:
+        return True
+    else:
+        return False
+
+num1 = int(input("Digite o primeiro número: "))
+num2 = (int(input("Digite o segundo número:")))
+        
+if multiplo(num1, num2) == True:
+    print(f"{num1} é múltiplo de {num2}")
+else:
+    print(f"{num1} não é múltiplo de {num2}")
