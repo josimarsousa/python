@@ -86,3 +86,13 @@ def fatorial(n):
 
 numero= int(input(f"Digite um número para calcular o fatorial: "))
 fator = fatorial(numero)    
+
+#outra forma calcular fatorial
+def fatorial2(n):
+    fat = 1
+    for i in range(1, n+1):
+        fat *= i
+    return print(f"O fatorial de {numero} é: {fat}")
+
+numero= int(input(f"Digite um número para calcular o fatorial: "))
+fator2 = fatorial2(numero)    
