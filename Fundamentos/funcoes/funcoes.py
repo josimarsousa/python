@@ -46,7 +46,7 @@ if multiplo(num1, num2) == True:
     print(f"{num1} é múltiplo de {num2}")
 else:
     print(f"{num1} não é múltiplo de {num2}")
-"""
+
 
 #pesquisa em uma lista
 def pesquisa(lista, valor):
@@ -111,3 +111,16 @@ def fatorial3(n):
 
 #exemplo de fatorial3
 print(fatorial3(5))
+"""
+#funcao recursiva de fibonacci
+def fibonacci(n):
+    print(f"Calculando o fibonacci de {n}")
+    if n <= 1:
+        print(f"Fibonacci de {n} é {n}")
+        return n
+    else:
+        print(f"Fibonacci de {n} é {fibonacci(n-1) + fibonacci(n-2)}")
+        return fibonacci(n-1) + fibonacci(n-2)
+
+#exemplo de fibonacci recursiva
+fibonacci(5)
