@@ -142,3 +142,11 @@ def faixa_int(pergunta, minimo, maximo):
         else:
             print("Valor dentro do aceitável!")
             break
+
+faixa_int("Digite um valor entre 0 e 5: ", 0, 5)
+
+#funcoes sem parametros
+def barra():
+    print("*" * 40)
+
+barra()
