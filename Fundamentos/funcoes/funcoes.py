@@ -124,7 +124,7 @@ def fibonacci(n):
 
 #exemplo de fibonacci recursiva
 fibonacci(5)
-"""
+
 #exemplo de validaçao sem usar a função
 while True:
     v = int(input("Digite um valor entre 0 e 5: "))
@@ -165,3 +165,13 @@ def soma(a, b, imprime=False):
     return s
 
 soma(2, 3, True)
+"""
+#nomeando parâmetros
+#funcao retangulo com parametros obrigatórios e opcionais
+def retangulo(largura, altura, caractere="*"):
+    linha = caractere * largura
+    for i in range(altura):
+        print(linha)
+
+#teste
+retangulo(5, 8)
