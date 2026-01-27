@@ -150,3 +150,18 @@ def barra():
     print("*" * 40)
 
 barra()
+
+#funcao barra2 com parametros opcionais
+def barra2(n=40, caractere="*"):
+    print(caractere * n)
+
+barra2()
+
+#funcão soma com parâmetros obrigatórios e opcionais
+def soma(a, b, imprime=False):
+    s = a + b
+    if imprime:
+        print(s)
+    return s
+
+soma(2, 3, True)
