@@ -111,7 +111,7 @@ def fatorial3(n):
 
 #exemplo de fatorial3
 print(fatorial3(5))
-"""
+
 #funcao recursiva de fibonacci
 def fibonacci(n):
     print(f"Calculando o fibonacci de {n}")
@@ -124,3 +124,21 @@ def fibonacci(n):
 
 #exemplo de fibonacci recursiva
 fibonacci(5)
+"""
+#exemplo de validaçao sem usar a função
+while True:
+    v = int(input("Digite um valor entre 0 e 5: "))
+    if v < 0 or v > 5:
+        print("Valor inválido!")
+    else:
+        print("Valor dentro do aceitável!")
+        break
+#transformando a validação em funcão
+def faixa_int(pergunta, minimo, maximo):
+    while True:
+        v = int(input(pergunta))
+        if v < minimo or v > maximo:
+            print("Valor inválido!")
+        else:
+            print("Valor dentro do aceitável!")
+            break
