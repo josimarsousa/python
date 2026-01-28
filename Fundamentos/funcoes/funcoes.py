@@ -221,3 +221,14 @@ def barra(n=10, c="*"):
 L = [[5, "-"], [10, "*"], [5], [6, "."]]
 for e in L:
     barra(*e)
+
+#funcao soma com numero indeterminado de parâmetros
+def soma_args(*args):
+    s = 0
+    for x in args:
+        s += x
+    return s
+
+print(soma_args(1,2))
+print(soma_args(1,2,3))
+print(soma_args(1,2,3,4))
