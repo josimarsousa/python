@@ -232,3 +232,13 @@ def soma_args(*args):
 print(soma_args(1,2))
 print(soma_args(1,2,3))
 print(soma_args(1,2,3,4))
+
+#funcao para imprimir numero maior com numero indeterminado de parâmetros
+def imprime_maior(mensagem, *numeros):
+    maior = None
+    for e in numeros:
+        if maior is None or maior < e:
+            maior = e
+    print(f"{mensagem} {maior}")
+
+imprime_maior("O maior número é:", 1, 2, 3, 4, 5)
