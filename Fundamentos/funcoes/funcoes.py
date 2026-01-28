@@ -165,7 +165,7 @@ def soma(a, b, imprime=False):
     return s
 
 soma(2, 3, True)
-"""
+
 #nomeando parâmetros
 #funcao retangulo com parametros obrigatórios e opcionais
 def retangulo(largura, altura, caractere="*"):
@@ -208,3 +208,16 @@ def eimpar(x):
 L = [1, 7, 9, 2, 11, 0]
 imprime_lista(L, imprime_elemento, epar)
 imprime_lista(L, imprime_elemento, eimpar)
+"""
+#empacotamento e desempacotamento de parâmetros
+def soma(a, b):
+    print(a + b)
+L = [2, 3]
+soma(*L)
+
+#outro exemplo
+def barra(n=10, c="*"):
+    print(c * n)
+L = [[5, "-"], [10, "*"], [5], [6, "."]]
+for e in L:
+    barra(*e)
