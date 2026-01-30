@@ -208,7 +208,7 @@ def eimpar(x):
 L = [1, 7, 9, 2, 11, 0]
 imprime_lista(L, imprime_elemento, epar)
 imprime_lista(L, imprime_elemento, eimpar)
-"""
+
 #empacotamento e desempacotamento de parâmetros
 def soma(a, b):
     print(a + b)
@@ -242,3 +242,7 @@ def imprime_maior(mensagem, *numeros):
     print(f"{mensagem} {maior}")
 
 imprime_maior("O maior número é:", 1, 2, 3, 4, 5)
+"""
+#funções lambda
+a = lambda x: x * 2
+print(a(3))
