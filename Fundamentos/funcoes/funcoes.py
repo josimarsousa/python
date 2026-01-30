@@ -246,3 +246,7 @@ imprime_maior("O maior número é:", 1, 2, 3, 4, 5)
 #funções lambda
 a = lambda x: x * 2
 print(a(3))
+
+#função lambda com mais de um parâmetro
+aumento = lambda a, b: (a * b / 100)
+print(aumento(100, 5))
