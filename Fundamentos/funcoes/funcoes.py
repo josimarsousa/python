@@ -332,3 +332,12 @@ def valida_inteiro(mensagem, minimo, maximo):
                 print(f"Digite um valor entre {minimo} e {maximo}")
         except ValueError:
                 print("Você deve digitar um número inteiro!")
+
+#importando e utilizando modulos
+#gerando numero aleatorio e colocando em orderm crescente
+import random
+
+for x in range(15):
+    print(random.randint(1, 25))
+#gerando numero sem repetir e em ordem crescente
+print(sorted(random.sample(range(1, 26), 15)))
