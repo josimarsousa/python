@@ -250,3 +250,14 @@ print(a(3))
 #função lambda com mais de um parâmetro
 aumento = lambda a, b: (a * b / 100)
 print(aumento(100, 5))
+
+#exceções
+nomes = ["Ana", "Carlos", "Maria"]
+for tentativa in range(3):
+    try:
+        i = int(input("Digite o índice que quer imprimir: "))
+        print(nomes[i])
+    except ValueError:
+        print("Digite um número!")
+    except IndexError:
+        print("Valor inválido, digite entre 0 e 2")
