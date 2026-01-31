@@ -306,3 +306,16 @@ try:
     print(3, epar(3))
 except Exception:
     print(f"Algo deu errado")
+
+#exemplo com while
+while True:
+    try:
+        v = int(input("Digite um número inteiro (0 sai):"))
+        if v == 0:
+            break
+    except Exception:
+        print("Valor inválido!")
+    else:
+        print("Parabéns, nenhuma exceção")
+    finally:
+        print("Executando sempre, mesmo com break")
