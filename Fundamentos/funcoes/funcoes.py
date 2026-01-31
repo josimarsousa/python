@@ -401,3 +401,37 @@ def imprime_listas(lista, nivel=0):
             imprime_listas(x, nivel + 1)
 print("Lista em niveis diferentes")
 imprime_listas([1, 2, [3, 4, [5, 6, [7,8,9]], 10]])
+
+#list comprehension
+print("List comprehension")
+L = [x for x in range(10)]
+print(L)
+
+#mesmo que utilizar um loop for
+print("List com loop for")
+L = []
+for x in range(10):
+    L.append(x)
+print(L)
+
+#list comprehension com outras listas
+print("List comprehension com outras listas")
+L = [(x, x * 2) for x in [0,1,2,3]]
+print(L)
+
+#list comprehension com outros tipos de dados
+print("list comprehension com outros tipos de dados")
+z = [s.upper() for s in "abcdefghij"]
+print(z)
+
+print("list comprehension com filtro e if")
+pares = [x for x in range(10) if x % 2 == 0]
+print(pares)
+
+import math
+
+I = [math.sqrt(z) for z in range(0, 10)]
+print(I)
+
+H = [z for z in range(0, 10) if math.sqrt(z) % 1 == 0]
+print(H)
