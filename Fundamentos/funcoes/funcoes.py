@@ -340,4 +340,43 @@ import random
 for x in range(15):
     print(random.randint(1, 25))
 #gerando numero sem repetir e em ordem crescente
-print(sorted(random.sample(range(1, 26), 15)))
+    print("Gerando números aleatórios sem repetir e em ordem")
+    print(sorted(random.sample(range(1, 26), 15)))
+
+
+#funcao type
+def tipo(v):
+    print(f"O tipo de {v} é {type(v)}")
+
+tipo(10)
+tipo(10.5)
+tipo("Olá")
+tipo([1, 2, 3])
+
+#funcao isinstance
+import types
+
+def diz_o_tipo(a):
+    if isinstance(a, str):
+        return "String"
+    elif isinstance(a, int):
+        return "Inteiro"
+    elif isinstance(a, float):
+        return "Ponto Flutuante"
+    elif isinstance(a, list):
+        return "Lista"
+    elif isinstance(a, dict):
+        return "Dicionário"
+    elif isinstance(a, types.FunctionType):
+        return "Função"
+    elif isinstance(a, types.BuiltinFunctionType):
+        return "Função interna"
+    else:
+        return str(type(a))
+print(diz_o_tipo(10))
+print(diz_o_tipo(10.5))
+print(diz_o_tipo("Olá"))
+print(diz_o_tipo([1, 2, 3]))    
+print(diz_o_tipo({"a": 1, "b": 2}))
+print(diz_o_tipo(print))
+print(diz_o_tipo(None))
