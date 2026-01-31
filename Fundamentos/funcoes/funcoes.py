@@ -478,3 +478,16 @@ def gerador_fibonacci(fim):
 
 lista =  [x for x in gerador_fibonacci(30)]
 print(lista)
+
+#generator comprehensions, assim como usamos em listas podemos criar geradores apenas
+#substituindo por parenteses
+print("Generator comprehensions")
+lista = [x for x in range(10) if x % 3 == 0]
+print(lista)
+#ou 
+print("com parenteses")
+lista1 = (x for x in range(10) if x % 3 == 0)
+print(lista1)
+print(next(lista1))
+print(next(lista1))
+print(next(lista1))
