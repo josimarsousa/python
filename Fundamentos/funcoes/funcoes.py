@@ -380,3 +380,14 @@ print(diz_o_tipo([1, 2, 3]))
 print(diz_o_tipo({"a": 1, "b": 2}))
 print(diz_o_tipo(print))
 print(diz_o_tipo(None))
+
+#navegando listas a partir do tipo de seus elementos
+L = ["a", ["b", "c", "d"], "e"]
+for numero in L:
+    if isinstance(numero, str):
+        print(f"{numero} é uma string")
+    else:
+        print("Lista: ", end="")
+        for e in numero:
+            print(f" {e} ", end="")
+        print()
