@@ -242,7 +242,7 @@ def imprime_maior(mensagem, *numeros):
     print(f"{mensagem} {maior}")
 
 imprime_maior("O maior número é:", 1, 2, 3, 4, 5)
-"""
+
 #funções lambda
 a = lambda x: x * 2
 print(a(3))
@@ -262,7 +262,7 @@ for tentativa in range(3):
     except IndexError:
         print("Valor inválido, digite entre 0 e 2")
 
-#exceções de tipo raiz Exception 
+#exceções de tipo raiz Exception, nomeando a função Exception
 nomes = ["Ana", "Carlos", "Maria"]
 for tentativa in range(3):
     try:
@@ -270,3 +270,16 @@ for tentativa in range(3):
         print(nomes[i])
     except Exception as e:
         print(f"Algo deu errado: {e}")
+"""
+#utilizando uma declaração try-except-finally
+nomes = ["Ana", "Carlos", "Maria"]
+for tentativa in range(3):
+    try:
+        i = int(input("Digite o índice que quer imprimir: "))
+        print(nomes[i])
+    except ValueError:
+        print("Digite um número!")
+    except Exception as e:
+        print(f"Algo deu errado: {e}")
+    finally:
+        print("Fim da tentativa")
