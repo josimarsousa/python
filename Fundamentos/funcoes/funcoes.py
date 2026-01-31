@@ -261,3 +261,12 @@ for tentativa in range(3):
         print("Digite um número!")
     except IndexError:
         print("Valor inválido, digite entre 0 e 2")
+
+#exceções de tipo raiz Exception 
+nomes = ["Ana", "Carlos", "Maria"]
+for tentativa in range(3):
+    try:
+        i = int(input("Digite o índice que quer imprimir: "))
+        print(nomes[i])
+    except Exception as e:
+        print(f"Algo deu errado: {e}")
