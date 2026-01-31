@@ -491,3 +491,9 @@ print(lista1)
 print(next(lista1))
 print(next(lista1))
 print(next(lista1))
+
+#dicionario comprehension
+print("Dicionario comprehension")
+
+dicionario = {chave: valor * 2 for chave, valor in {"a": 1, "b": 2}.items()}
+print(dicionario)
