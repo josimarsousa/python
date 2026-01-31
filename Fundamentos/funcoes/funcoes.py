@@ -435,3 +435,46 @@ print(I)
 
 H = [z for z in range(0, 10) if math.sqrt(z) % 1 == 0]
 print(H)
+
+#geradores em python
+print("Geradores em python")
+L = [1,2,3,4,5]
+i = iter(L)
+print(i)
+print(next(i))
+print(next(i))
+print(next(i))
+print(next(i))
+print(next(i))
+
+#podemos usar o mesmo raciocinio com dicionários
+d = {"A": 1, "B": 2, "C": 3}
+i = iter(d)
+print(i)
+print(next(i))
+print(next(i))
+print(next(i))
+
+#gerador com sequência finita de números
+print("Gerador com sequência finita de números")
+def gerador_fibonacci():
+    p = 0
+    s = 1
+    while s < 10:
+        yield s
+        p, s = s, p + s
+
+lista =  [x for x in gerador_fibonacci()]
+print(lista)
+
+#outra versao de gerador_fibonacci que receb um valor como parametro fim
+print("Versao limitada com um parametro fim")
+def gerador_fibonacci(fim):
+    p = 0
+    s = 1
+    while s < fim:
+        yield s
+        p, s = s, p + s
+
+lista =  [x for x in gerador_fibonacci(30)]
+print(lista)
