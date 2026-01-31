@@ -294,7 +294,7 @@ except ValueError:
   raise
 finally:            #executado independentemente de ter ocorrido uma exceção ou não
   print("Fim da tentativa")
-"""
+
 #outro exemplo com função
 def epar(n):
     try:
@@ -319,3 +319,16 @@ while True:
         print("Parabéns, nenhuma exceção")
     finally:
         print("Executando sempre, mesmo com break")
+"""
+
+#módulos
+def valida_inteiro(mensagem, minimo, maximo):
+    while True:
+        try:
+            v = int(input(mensagem))
+            if v < minimo or v > maximo:
+                return v
+            else:
+                print(f"Digite um valor entre {minimo} e {maximo}")
+        except ValueError:
+                print("Você deve digitar um número inteiro!")
