@@ -270,7 +270,7 @@ for tentativa in range(3):
         print(nomes[i])
     except Exception as e:
         print(f"Algo deu errado: {e}")
-"""
+
 #utilizando uma declaração try-except-finally
 nomes = ["Ana", "Carlos", "Maria"]
 for tentativa in range(3):
@@ -281,5 +281,28 @@ for tentativa in range(3):
         print("Digite um número!")
     except Exception as e:
         print(f"Algo deu errado: {e}")
-    finally:
+    finally:            #executado independentemente de ter ocorrido uma exceção ou não
         print("Fim da tentativa")
+
+#utilizando a instrução raise para lançar uma exceção
+nomes = ["Ana", "Carlos", "Maria"]
+try:
+    i = int(input("Digite o índice que quer imprimir: "))
+    print(nomes[i])
+except ValueError:
+  print("Digite um número!")
+  raise
+finally:            #executado independentemente de ter ocorrido uma exceção ou não
+  print("Fim da tentativa")
+"""
+#outro exemplo com função
+def epar(n):
+    try:
+        return n % 2 == 0
+    finally:
+        print("Executado antes de retornar")
+try:
+    print(2, epar(2))
+    print(3, epar(3))
+except Exception:
+    print(f"Algo deu errado")
