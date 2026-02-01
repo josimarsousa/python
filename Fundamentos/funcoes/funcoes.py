@@ -497,3 +497,8 @@ print("Dicionario comprehension")
 
 dicionario = {chave: valor * 2 for chave, valor in {"a": 1, "b": 2}.items()}
 print(dicionario)
+
+#set comprehension
+print("Set comprehension")
+conjunto = {x for x in [9,2,1,3,6,9] if x % 3 == 0}
+print(conjunto)
