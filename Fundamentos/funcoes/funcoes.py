@@ -535,3 +535,79 @@ print("filtro de números pares:", lista)
 
 #filter com comprehensions
 print("filtro de números pares com comprehensions:", [a for a in [2,5,6,43,6,7,8,9,57,54,67,44,52] if a%2 == 0])
+
+
+#aplicaçao de funções sem usar partial
+#calculadora básica
+import operator
+
+def executa(operacao, simbolo, operando1, operando2):
+    resultado = operacao(float(operando1), float(operando2))
+    print(f"{operando1} {simbolo} {operando2} = {resultado:.2f}")
+
+operando1 = input("Digite o primeiro operando: ")
+operando2 = input("Digite o segundo operando: ")
+operacao = input("Operação: ").strip()
+if operacao == "+":
+    executa(operator.add, "+", operando1, operando2)
+elif operacao == "-":
+    executa(operator.sub, "-", operando1, operando2)
+elif operacao == "*":
+    executa(operator.mul, "*", operando1, operando2)
+elif operacao == "/":
+    executa(operator.truediv, "/", operando1, operando2)
+else:
+    print("Operação inválida")
+
+
+#usando o partial
+import operator
+from functools import partial
+
+def executa_partial(operacao, simbolo, operando1, operando2):
+    resultado = operacao(float(operando1), float(operando2))
+    print(f"{operando1} {simbolo} {operando2} = {resultado:.2f}")
+operacoes = {
+    "+": operator.add,
+    "-": operator.sub,
+    "*": operator.mul,
+    "/": operator.truediv,
+}
+operando1 = input("Digite o primeiro operando: ")
+operando2 = input("Digite o segundo operando: ")
+operacao = input("Operação: ").strip()
+if operacao in operacoes:
+    executa_partial(operacoes[operacao], operacao, operando1, operando2)
+else:
+    print("Operação inválida")
+
+
+#operador walrus
+#resolvendo alguns problemas realcionados ao sinal =
+#exemplo sem walrus
+soma = 0.0
+valor = input("Digite fim para terminar ou um número para somar:")
+while valor != "fim":
+    soma += float(valor)
+    valor = input("Digite fim para terminar ou um número para somar: ")
+print(f"A soma é: {soma}")
+
+#exemplo com walrus
+soma = 0.0
+while (valor := input("Digite fim para terminar ou um número para somar:")) != "fim":
+    soma += float(valor)
+print(f"A soma é: {soma}")
+
+#walrus nao funciona com tuplas
+#outro exemplo com walrus com comprehensions
+lista = [[n ** 2, n ** 2 * 2, n ** 2 * 3] for n in range(1, 5)]
+print(lista)
+
+#walrus com expressao if
+a = "TeXto"
+a = m.lower() if (m := a.strip()) else "-"
+print(a)
+
+#walrus com f-strings
+a = [1,2,4,5]
+print(f"{a=} tem {(tamanho := len(a))} elementos que somam {(soma := sum(a))} e tem media {soma / tamanho:.2f}")
