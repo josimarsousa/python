@@ -502,3 +502,15 @@ print(dicionario)
 print("Set comprehension")
 conjunto = {x for x in [9,2,1,3,6,9] if x % 3 == 0}
 print(conjunto)
+
+
+#map e zip 
+print("Map e zip")
+def map_1(funcao, valores):
+    retorno = []
+    for v in valores:
+        retorno.append(funcao(v))
+    return retorno
+
+#utilizando map_1
+print(map_1(lambda x: x/2, [1,2,3]))
