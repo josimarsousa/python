@@ -532,3 +532,6 @@ print(reduce(operator.add, [1, 2, 3]))
 
 lista = list(filter(lambda a: a%2 == 0, [2,5,6,43,6,7,8,9,57,54,67,44,52]))
 print("filtro de números pares:", lista)
+
+#filter com comprehensions
+print("filtro de números pares com comprehensions:", [a for a in [2,5,6,43,6,7,8,9,57,54,67,44,52] if a%2 == 0])
