@@ -525,3 +525,10 @@ print(reduce(min, [1, 4, 7, 90]))
 print(reduce(max, [1, 4, 7, 90]))
 
 print(reduce(operator.add, [1, 2, 3]))
+
+
+#filter
+#usado para filtrar elementos de uma lista ou um outro iteravel
+
+lista = list(filter(lambda a: a%2 == 0, [2,5,6,43,6,7,8,9,57,54,67,44,52]))
+print("filtro de números pares:", lista)
