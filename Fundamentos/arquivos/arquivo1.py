@@ -11,3 +11,9 @@ arquivo = open("números.txt", "r")
 for linha in arquivo.readlines():
     print(linha)
 arquivo.close()
+
+#uso do with para abrir e fechar o arquivo automaticamente
+print("uso do WITH")
+with open("números.txt", "r") as arquivo:
+    for linha in arquivo.readlines():
+        print(linha)
