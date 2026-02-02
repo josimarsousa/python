@@ -514,3 +514,14 @@ def map_1(funcao, valores):
 
 #utilizando map_1
 print(map_1(lambda x: x/2, [1,2,3]))
+
+#funcao reduce
+#para utiliza-la devemos importa-la
+from functools import reduce
+import operator
+
+print(reduce(min, [1, 4, 7, 90]))
+
+print(reduce(max, [1, 4, 7, 90]))
+
+print(reduce(operator.add, [1, 2, 3]))
