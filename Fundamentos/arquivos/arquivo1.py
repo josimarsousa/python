@@ -27,10 +27,25 @@ with open("impares.txt", "w") as impares:
             else:
                 impares.write(f"{n}\n")
                 
-"""
+
 #arquivos - leitura e escrita
 with open("multiplos de 4.txt", "w") as multiplos4:
     with open("pares.txt") as pares:
         for linha in pares.readlines():
             if int(linha) % 4 == 0:
                 multiplos4.write(linha)
+                
+"""
+
+#processamento de um arquivo
+largura = 79
+with open("entrada.txt") as entrada:
+    for linha in entrada.readlines():
+        if linha[0] == ";":
+            continue
+        elif linha[0] == ">":
+            print(linha[1:].rjust(largura))
+        elif linha[0] == "*":
+            print(linha[1:].center(largura))
+        else:
+            print(linha)
