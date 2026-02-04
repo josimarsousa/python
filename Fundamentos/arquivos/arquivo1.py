@@ -4,7 +4,7 @@ arquivo = open("números.txt", "w")
 for linha in range(1, 101):
     arquivo.write(f"{linha}\n")
 arquivo.close()
-"""
+
 
 #lendo e abrindo um arquivo e imprimir suas linhas na tela
 arquivo = open("números.txt", "r")
@@ -17,3 +17,12 @@ print("uso do WITH")
 with open("números.txt", "r") as arquivo:
     for linha in arquivo.readlines():
         print(linha)
+"""
+#geração de arquivos
+with open("impares.txt", "w") as impares:
+    with open("pares.txt", "w") as pares:
+        for n in range(0, 1000):
+            if n % 2 == 0:
+                pares.write(f"{n}\n")
+            else:
+                impares.write(f"{n}\n")
