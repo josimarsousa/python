@@ -99,14 +99,17 @@ def lista():
     print(".......")
 
 def le():
+    #lê o arquivo e carrega a agenda na memória - global
     global agenda
     nome_arquivo = pede_nome_arquivo()
-    with open(nome_arquivo, "r", encoding="utf-8") as arquivo:
+    
+    with open(nome_arquivo, "r", encoding="utf-8") as arquivo: 
         agenda = []
+        print(f"Carregando arquivo {nome_arquivo}...")
         for linha in arquivo.readlines():
             nome, telefone = linha.strip().split("#")
             agenda.append([nome, telefone])
-
+            
 def grava():
     nome_arquivo = pede_nome_arquivo()
     with open(nome_arquivo, "w", encoding="utf-8") as arquivo:

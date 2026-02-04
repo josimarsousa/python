@@ -1,5 +1,5 @@
 #lista
-"""
+
 Z = [1,2,3,4,5,6,7,8,9,10]
 print(Z)
 
@@ -511,7 +511,7 @@ print(tupla[0])
 print(tupla[2])
 print(tupla[1:])
 print(len(tupla))
-"""
+
 #conjuntos set
 a = set()
 a.add(11)

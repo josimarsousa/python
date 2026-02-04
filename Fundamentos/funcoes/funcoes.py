@@ -1,4 +1,4 @@
-"""
+
 def soma(a, b):
     #print(f"A soma de {a} + {b} é: {a+b}")
     return (f"A soma de {a} + {b} é: {a+b}")
@@ -319,7 +319,7 @@ while True:
         print("Parabéns, nenhuma exceção")
     finally:
         print("Executando sempre, mesmo com break")
-"""
+
 
 #módulos
 def valida_inteiro(mensagem, minimo, maximo):
