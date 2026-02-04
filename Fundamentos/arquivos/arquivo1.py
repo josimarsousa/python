@@ -17,7 +17,7 @@ print("uso do WITH")
 with open("números.txt", "r") as arquivo:
     for linha in arquivo.readlines():
         print(linha)
-"""
+
 #geração de arquivos
 with open("impares.txt", "w") as impares:
     with open("pares.txt", "w") as pares:
@@ -26,3 +26,11 @@ with open("impares.txt", "w") as impares:
                 pares.write(f"{n}\n")
             else:
                 impares.write(f"{n}\n")
+                
+"""
+#arquivos - leitura e escrita
+with open("multiplos de 4.txt", "w") as multiplos4:
+    with open("pares.txt") as pares:
+        for linha in pares.readlines():
+            if int(linha) % 4 == 0:
+                multiplos4.write(linha)
