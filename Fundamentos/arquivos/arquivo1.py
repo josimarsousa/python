@@ -70,7 +70,8 @@ def novo():
     nome = pede_nome()
     telefone = pede_telefone()
     agenda.append([nome, telefone])
-
+    grava()
+    
 def apaga():
     nome = pede_nome()
     p = pesquisa(nome)
