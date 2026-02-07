@@ -71,7 +71,7 @@ def novo():
     telefone = pede_telefone()
     agenda.append([nome, telefone])
     grava()
-    
+
 def apaga():
     nome = pede_nome()
     p = pesquisa(nome)
@@ -103,7 +103,6 @@ def le():
     #lê o arquivo e carrega a agenda na memória - global
     global agenda
     nome_arquivo = pede_nome_arquivo()
-    
     with open(nome_arquivo, "r", encoding="utf-8") as arquivo: 
         agenda = []
         print(f"Carregando arquivo {nome_arquivo}...")
