@@ -8,5 +8,7 @@ with open("pagina.html", "w", encoding="utf-8") as pagina:
     pagina.write("</head>\n")
     pagina.write("<body>\n")
     pagina.write("<h1>Hello World!</h1>\n")
+    for linha in range(10):
+        pagina.write(f"<p>{linha}</p>"")
     pagina.write("</body>\n")
     pagina.write("</html>\n")
