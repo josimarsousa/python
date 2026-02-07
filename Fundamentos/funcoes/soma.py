@@ -14,4 +14,4 @@ L = []
 for n in range(10):
     L.append(valida_inteiro(f"Digite o um número: ", 0, 20))
 print(f"Soma: {sum(L)}")
-
+#
