@@ -7,23 +7,18 @@ filmes = {
 
 with open("filmes.html", "w", encoding="utf-8") as pagina:
     pagina.write("""
-                <!DOCTYPE html>
-                <html lang="pt-BR">
-                <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Filmes</title>
-                </head>
-                <body>
-                <h1>Filmes por Categoria</h1>
-                """)
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Filmes</title>
+</head>
+<body>
+""")
     for c, v in filmes.items():
         pagina.write(f"<h2>{c}</h2>\n")
-        pagina.write("<ul>\n")
-        for e in filmes.items():
-            pagina.write(f"<li>{c}</li>\n")
-            for e in v:
-                pagina.write("</ul>\n")
+        for e in v:
+            pagina.write(f"<li>{e}</li>\n")
     pagina.write("""
                 </body>
                 </html>
