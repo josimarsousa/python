@@ -21,9 +21,14 @@ open("moribundo.txt",   "w").close()
 os.mkdir("vago")
 os.rmdir("vago")
 os.remove("moribundo.txt")
-"""
+
 
 #listando arquivos e diretorios
 print(os.listdir("."))
 print(os.listdir("avos"))
 print(os.listdir("avos/pais"))
+
+#criando e renomeando um diretorio
+os.mkdir("velho")"""
+os.rename("velho", "novo")
+print(os.listdir("."))
