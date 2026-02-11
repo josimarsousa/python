@@ -29,6 +29,20 @@ print(os.listdir("avos"))
 print(os.listdir("avos/pais"))
 
 #criando e renomeando um diretorio
-os.mkdir("velho")"""
+os.mkdir("velho")
 os.rename("velho", "novo")
 print(os.listdir("."))
+
+
+#a funcao rename tambem pode mover arquivos.
+os.makedirs("avo/pai/filho")
+os.makedirs("avo/mae/filha")
+os.rename("avo/mae/filha", "avo/mae/filho")
+"""
+#cria um arquivo e o fecha imediatamente
+open("moribundo.txt", "w").close()
+os.mkdir("vago")
+os.rmdir("vago")
+#os.rmdir("moribundo.txt") = esta linha remove o arquivo criando anteriormente
+
+
