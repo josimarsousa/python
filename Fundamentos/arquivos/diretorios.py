@@ -44,7 +44,7 @@ open("moribundo.txt", "w").close()
 os.mkdir("vago")
 os.rmdir("vago")
 #os.rmdir("moribundo.txt") = esta linha remove o arquivo criando anteriormente
-"""
+
 
 #modulo os.path
 import os.path
@@ -53,4 +53,10 @@ for a in os.listdir("."):
         print(f"{a}/")
     elif os.path.isfile(a):
         print(a)
-
+"""
+#verificando se um diretório já existe
+import os.path
+if os.path.exists("z"):
+    print("O diretório z existe")
+else:
+    print("O diretório z não existe")
