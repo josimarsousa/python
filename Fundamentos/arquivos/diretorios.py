@@ -53,7 +53,7 @@ for a in os.listdir("."):
         print(f"{a}/")
     elif os.path.isfile(a):
         print(a)
-"""
+
 #verificando se um diretório já existe
 import os.path
 if os.path.exists("z"):
@@ -91,3 +91,18 @@ print("estruturas de tempo")
 agora2 = time.struct_time((2010, 6, 23, 18, 23, 40, 2, 174, 1))
 segundos = time.mktime(agora2)
 print(time.gmtime(segundos))
+"""
+#exibindo componentes de data e hora
+
+import time
+
+agora = time.localtime()
+print(f"Ano: {agora.tm_year}")
+print(f"Mês: {agora.tm_mon}")
+print(f"Dia: {agora.tm_mday}")
+print(f"Hora: {agora.tm_hour}")
+print(f"Minuto: {agora.tm_min}")
+print(f"Segundo: {agora.tm_sec}")
+print(f"Dia da semana: {agora.tm_wday}")
+print(f"Dia do ano: {agora.tm_yday}")
+print(f"Fuso horário: {agora.tm_isdst}")
