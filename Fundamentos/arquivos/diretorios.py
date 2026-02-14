@@ -76,3 +76,12 @@ print(f"Tamanho: {os.path.getsize(nome)} bytes")
 print(f"Criado: {time.ctime(os.path.getctime(nome))}")
 print(f"Modificado: {time.ctime(os.path.getmtime(nome))}")
 print(f"Acessado: {time.ctime(os.path.getatime(nome))}")
+
+#funcao para manipular o tempo
+import time
+
+agora = time.time()
+print("Data e hora")
+print(agora)
+print("função ctime")
+print(time.ctime(agora))
