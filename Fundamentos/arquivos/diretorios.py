@@ -85,3 +85,9 @@ print("Data e hora")
 print(agora)
 print("função ctime")
 print(time.ctime(agora))
+
+#estrutura tempo
+print("estruturas de tempo")
+agora2 = time.struct_time((2010, 6, 23, 18, 23, 40, 2, 174, 1))
+segundos = time.mktime(agora2)
+print(time.gmtime(segundos))
