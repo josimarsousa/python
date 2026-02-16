@@ -140,3 +140,19 @@ print(os.path.dirname(caminho))
 print(os.path.split(caminho))
 print(os.path.splitext("arquivo.txt"))
 print(os.path.splitdrive("c:/Windows"))
+
+#usando a funcao join para juntar os componentes de um caminho
+print("usando a funcao join")
+print(os.path.join("c:", "dados", "programas"))
+print(os.path.abspath(os.path.join("c:", "dados", "programas")))
+
+#pathlib no linux e macos
+from pathlib import Path, PosixPath
+caminho = Path(".")
+print(caminho)
+
+PosixPath('.')
+
+print(caminho.exists())
+print(caminho.is_dir())
+print(caminho.is_file())
