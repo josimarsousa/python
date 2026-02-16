@@ -27,4 +27,4 @@ while produto := input("Nome do produto: "):
     tabela_de_precos[produto] = float(preco)
 
 with Path("precos.json").open("w", encoding="utf-8") as arquivo:
-    json.dump(tabela_de_precos, arquivo)
+    json.dump(tabela_de_precos, arquivo, indent=2, ensure_ascii=False)
