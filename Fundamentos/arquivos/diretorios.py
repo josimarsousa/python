@@ -197,3 +197,14 @@ print("date e hora com o mês")
 print(agora.month)
 print("date e hora com o ano")
 print(agora.year)
+
+#acessando a hora, minuto ou segundo e microsegundo com propriedades de data e hora
+print("date e hora com o microsegundo\n")
+
+print("date e hora com a hora")
+print(agora.hour)
+print("date e hora com o minuto")
+print(agora.minute)
+print("date e hora com o segundo")
+print(agora.second)
+print(agora.microsecond)
