@@ -189,3 +189,11 @@ agora = datetime.datetime.now()
 print(agora)
 outro = datetime.datetime.now().time()
 print(outro)
+
+#acessando o dia, o mês e o ano com propriedades de data e hora
+print("date e hora com o dia")
+print(agora.day)
+print("date e hora com o mês")
+print(agora.month)
+print("date e hora com o ano")
+print(agora.year)
