@@ -158,6 +158,22 @@ print(caminho.is_dir())
 print(caminho.is_file())
 
 #pathlib pode ser usada para abrir arquivos tambem
-with open("números.txt", "r") as arquivo:
-    for linha in arquivo.readlines():
-        print(linha)
+from pathlib import Path
+arquivo_numeros = Path("números.txt")
+if arquivo_numeros.exists():
+    with arquivo_numeros.open("r") as arquivo:
+        for linha in arquivo.readlines():
+            print(linha, end="")
+else:
+    print("Arquivo números.txt não encontrado para leitura")
+
+#arvore de diretorios sendo percorrida com pathlib
+import sys
+caminho_base = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(".")
+for raiz, diretorios, arquivos in os.walk(caminho_base):
+    print("\nCaminho: ", raiz)
+    for d in diretorios:
+        print(f"{d}/")
+    for f in arquivos:
+        print(f" {f}")
+    print(f"{len(diretorios)} diretorios(s), {len(arquivos)} arquivo(s)")
