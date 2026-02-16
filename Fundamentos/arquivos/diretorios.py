@@ -130,3 +130,13 @@ print(time.strftime("%a, %d %b %Y %H:%M:%S\n", agora))
 print(time.strftime("Hoje é o dia %j dia do ano de %Y\n", agora))
 print(time.strftime("A hora atual é %H:%M:%S\n", agora))
 print(time.strftime("%b %d/%m/%y %H:%M\n", agora))
+
+#uso de caminhos
+import os.path
+caminho = "i/j/k"
+print("usando caminhos\n")
+print(os.path.abspath(caminho))
+print(os.path.dirname(caminho))
+print(os.path.split(caminho))
+print(os.path.splitext("arquivo.txt"))
+print(os.path.splitdrive("c:/Windows"))
