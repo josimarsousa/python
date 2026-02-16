@@ -156,3 +156,8 @@ PosixPath('.')
 print(caminho.exists())
 print(caminho.is_dir())
 print(caminho.is_file())
+
+#pathlib pode ser usada para abrir arquivos tambem
+with open("números.txt", "r") as arquivo:
+    for linha in arquivo.readlines():
+        print(linha)
