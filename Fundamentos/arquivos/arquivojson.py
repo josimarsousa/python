@@ -16,3 +16,15 @@ for aluno in turma:
     print("Notas: ", aluno["notas"])
     print("Média: ", sum(aluno["notas"]) / len(aluno["notas"]))
     print("-----------------")
+
+#criando uma tabela de preços em formato json
+tabela_de_precos = {}
+
+print("Criador da tabela de preços")
+print("Digite um nome de produto em branco para terminar")
+while produto := input("Nome do produto: "):
+    preco = input("Preço: ")
+    tabela_de_precos[produto] = float(preco)
+
+with Path("precos.json").open("w", encoding="utf-8") as arquivo:
+    json.dump(tabela_de_precos, arquivo)
