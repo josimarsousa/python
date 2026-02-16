@@ -177,3 +177,15 @@ for raiz, diretorios, arquivos in os.walk(caminho_base):
     for f in arquivos:
         print(f" {f}")
     print(f"{len(diretorios)} diretorios(s), {len(arquivos)} arquivo(s)")
+
+
+#Data e hora 
+import datetime
+
+print("Data e hora\n")
+hoje = datetime.date.today()
+print(hoje)
+agora = datetime.datetime.now()
+print(agora)
+outro = datetime.datetime.now().time()
+print(outro)
