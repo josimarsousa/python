@@ -208,3 +208,15 @@ print(agora.minute)
 print("date e hora com o segundo")
 print(agora.second)
 print(agora.microsecond)
+
+#mostra data autal em diversos fusos horarios
+from zoneinfo import ZoneInfo
+from datetime import datetime
+
+brasilia = ZoneInfo("America/Sao_Paulo")
+print("Data e hora em Brasília")
+print(datetime.now(brasilia))   
+nova_iorque = ZoneInfo("America/New_York")
+print("Data e hora em Nova Iorque")
+print(datetime.now(nova_iorque))
+#assim podemos obter variaveis com a data e hora em diferentes fusos horarios de diferentes partes do mundo
