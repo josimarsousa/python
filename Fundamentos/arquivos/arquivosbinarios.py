@@ -9,6 +9,7 @@ def imprime_bytes(imagem, bytes_por_linha=16):
         tview = "".join([chr(v) if chr(v).isprintable() else "." for v in b])
         padding = " " * 3 * (bytes_por_linha - len(b))
         print(f"{hex_view} {padding}{tview}")
+print(__name__)
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Uso: python arquivosbinarios.py <arquivo>")
@@ -17,3 +18,9 @@ if __name__ == "__main__":
     with open(caminho, "rb") as f:
         imagem = f.read()
     imprime_bytes(imagem)
+
+    print("\n")
+
+#verificando a posicao da letra A na tabela ASCII
+print("posição da letra A na tabela ASCII:")
+print(ord("A"))
