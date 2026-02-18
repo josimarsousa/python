@@ -7,9 +7,8 @@ class Conta:
         self.deposito(saldo)
     
     def resumo(self):
-        print(f"CC Numero: {self.numero}")
-        print(f"Saldo: {self.saldo:10.2f}")
-    
+        print(f"CC Numero: {self.numero} Saldo: {self.saldo:10.2f}")
+        
     def saque(self, valor):
         if self.saldo >= valor:
             self.saldo -= valor
