@@ -28,3 +28,13 @@ class Conta:
         for op in self.operacoes:
             print(f"{op[0]:10s} {op[1]:10.2f}")
         print(f"Saldo: {self.saldo:10.2f}\n")
+
+class ContaEspecial(Conta):
+    def __init__(self, clientes, numero, saldo=0, limite=0):
+       super().__init__(clientes, numero, saldo)
+       self.limite = limite
+    
+    def saque(self, valor):
+        if self.saldo + self.limite >= valor:
+            self.saldo -= valor
+            self.operacoes.append(["SAQUE", valor])
