@@ -1,0 +1,30 @@
+class Conta:
+    def __init__(self, clientes, numero, saldo=0):
+        self.saldo = saldo
+        self.clientes = clientes
+        self.numero = numero
+        self.operacoes = []
+        self.deposito(saldo)
+    
+    def resumo(self):
+        print(f"CC Numero: {self.numero}")
+        print(f"Saldo: {self.saldo:10.2f}")
+    
+    def saque(self, valor):
+        if self.saldo >= valor:
+            self.saldo -= valor
+            self.operacoes.append(["SAQUE", valor])
+            print(f"Saque de {valor} realizado com sucesso.")
+        else:
+            print(f"Saldo insuficiente.")
+
+    def deposito(self, valor):
+        self.saldo += valor
+        print(f"Depósito de {valor} realizado com sucesso.")
+        self.operacoes.append(["DEPÓSITO", valor])
+
+    def extrato(self):
+        print(f"EXTRATO CC N {self.numero}\n")
+        for op in self.operacoes:
+            print(f"{op[0]:10s} {op[1]:10.2f}")
+        print(f"Saldo: {self.saldo:10.2f}\n")
