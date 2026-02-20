@@ -1,6 +1,8 @@
 #consulta utilizando parametros
 import sqlite3
 from contextlib import closing
+
+
 nome = input("Digite o nome a pesquisar: ")
 with sqlite3.connect("agenda.db") as conexao:
     with closing(conexao.cursor()) as cursor:
