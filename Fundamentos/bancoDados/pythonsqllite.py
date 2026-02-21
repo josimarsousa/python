@@ -10,7 +10,7 @@ cursor.execute('''
 
 cursor.execute('''
         INSERT INTO contatos (nome, telefone) VALUES (?, ?)
-        ''', ("Maria", "9876-5678"))
+        ''', ("Jorge", "9870-4657"))
 
 conexao.commit()
 cursor.close()

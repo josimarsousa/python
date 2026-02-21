@@ -7,3 +7,6 @@ with sqlite3.connect("agenda.db") as conexao:
         cursor.execute("SELECT * FROM contatos")
         for linha in cursor.fetchall():
             print(f"ID: {linha[0]}\nNome: {linha[1]}\nTelefone: {linha[2]}\n")
+
+cursor.close()
+conexao.close()
