@@ -13,3 +13,7 @@ with sqlite3.connect("brasil.db") as conexao:
                         set sigla = ?,
                         regiao = ?
                         WHERE nome = ?""", dados)
+
+
+conexao.commit()
+conexao.close()
