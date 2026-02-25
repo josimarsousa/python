@@ -21,3 +21,4 @@ with sqlite3.connect("brasil.db") as conexao:
                        )""")
         cursor.executemany("INSERT INTO estados (nome, populacao) VALUES (?, ?)", dados)    
     conexao.commit()
+conexao.close()

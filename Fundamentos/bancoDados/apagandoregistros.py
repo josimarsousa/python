@@ -11,3 +11,6 @@ with sqlite3.connect("agenda.db") as conexao:
         else:
             conexao.rollback()
             print("Alteração não realizada")
+
+cursor.close()
+conexao.close()
