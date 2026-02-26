@@ -10,3 +10,5 @@ with sqlite3.connect("brasil.db") as conexao:
         group by regiao"""):
         print(f"{0:6} {1:17}".format(*regiao))        
 
+conexao.commit()
+conexao.close()
