@@ -4,33 +4,33 @@ import sqlite3
 from contextlib import closing
 
 dados = [
-    ["São Paulo", 49024937, "Sudeste"],
-    ["Rio de Janeiro", 16615526, "Sudeste"],
-    ["Minas Gerais", 20732600, "Sudeste"],
-    ["Espírito Santo", 4018650, "Sudeste"],
-    ["Bahia", 14016238, "Nordeste"],
-    ["Paraná", 11444052, "Sul"],
-    ["Goiás", 7056495, "Centro-Oeste"],
-    ["Pernambuco", 9058962, "Nordeste"],
-    ["Maranhão", 6775152, "Nordeste"],
-    ["Amazonas", 3941613, "Norte"],
-    ["Rondônia", 1771654, "Norte"],
-    ["Tocantins", 1572866, "Norte"],
-    ["Pará", 8602865, "Norte"],
-    ["Amapá", 877016, "Norte"],
-    ["Acre", 884431, "Norte"],
-    ["Roraima", 63772, "Norte"],
-    ["Sergipe", 2291077, "Nordeste"],
-    ["Alagoas", 3337599, "Nordeste"],
-    ["Piauí", 3273227, "Nordeste"],
-    ["Distrito Federal", 3015268, "Centro-Oeste"],
-    ["Mato Grosso", 3484466, "Centro-Oeste"],
-    ["Mato Grosso do Sul", 2778986, "Centro-Oeste"],
-    ["Paraíba", 4059905, "Nordeste"],
-    ["Ceará", 8835051, "Nordeste"],
-    ["Rio Grande do Norte", 3483348, "Nordeste"],
-    ["Rio Grande do Sul", 11247972, "Sul"],
-    ["Santa Catarina", 7164788, "Sul"]
+    ["São Paulo", 49024937, "Sudeste", "SP"],
+    ["Rio de Janeiro", 16615526, "Sudeste", "RJ"],
+    ["Minas Gerais", 20732600, "Sudeste", "MG"],
+    ["Espírito Santo", 4018650, "Sudeste", "ES"],
+    ["Bahia", 14016238, "Nordeste", "BA"],
+    ["Paraná", 11444052, "Sul", "PR"],
+    ["Goiás", 7056495, "Centro-Oeste", "GO"],
+    ["Pernambuco", 9058962, "Nordeste", "PE"],
+    ["Maranhão", 6775152, "Nordeste", "MA"],
+    ["Amazonas", 3941613, "Norte", "AM"],
+    ["Rondônia", 1771654, "Norte", "RO"],
+    ["Tocantins", 1572866, "Norte", "TO"],
+    ["Pará", 8602865, "Norte", "PA"],
+    ["Amapá", 877016, "Norte", "AP"],
+    ["Acre", 884431, "Norte", "AC"],
+    ["Roraima", 63772, "Norte", "RR"],
+    ["Sergipe", 2291077, "Nordeste", "SE"],
+    ["Alagoas", 3337599, "Nordeste", "AL"],
+    ["Piauí", 3273227, "Nordeste", "PI"],
+    ["Distrito Federal", 3015268, "Centro-Oeste", "DF"],
+    ["Mato Grosso", 3484466, "Centro-Oeste", "MT"],
+    ["Mato Grosso do Sul", 2778986, "Centro-Oeste", "MS"],
+    ["Paraíba", 4059905, "Nordeste", "PB"],
+    ["Ceará", 8835051, "Nordeste", "CE"],
+    ["Rio Grande do Norte", 3483348, "Nordeste", "RN"],
+    ["Rio Grande do Sul", 11247972, "Sul", "RS"],
+    ["Santa Catarina", 7164788, "Sul", "SC"]
 ]
 
 with sqlite3.connect("brasil.db") as conexao:
@@ -41,8 +41,9 @@ with sqlite3.connect("brasil.db") as conexao:
                             id integer primary key autoincrement, 
                             nome text, 
                             populacao integer,
-                            regiao text
+                            regiao text,
+                            sigla text
                        )""")
-        cursor.executemany("INSERT INTO estados (nome, populacao, regiao) VALUES (?, ?, ?)", dados)    
+        cursor.executemany("INSERT INTO estados (nome, populacao, regiao, sigla) VALUES (?, ?, ?, ?)", dados)    
     conexao.commit()
 conexao.close()
