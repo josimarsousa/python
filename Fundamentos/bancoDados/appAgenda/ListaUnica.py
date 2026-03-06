@@ -9,3 +9,45 @@ class DBListaUnica(ListaUnica):
     def limpa(self):
         self.apagados = []
     
+class DBNome(Nome):
+    def __init__(self, nome, id_=None):
+        super().__init__(nome)
+        self.id = id_
+
+class DBTipoTelefone(TipoTelefone):
+    def __init__(self, id_, tipo):
+        superr().__init__(tipo)
+        self.id = id_
+
+class DBTelefone(Telefone):
+    def __init__(self, numero, tipo=None, id_=None, id_nome=None):
+        super().__init__(numero, tipo)
+        self.id = id_
+        self.id_nome= id_nome
+class DBTelefones(self):
+    super().__init__(DBTelefone)
+
+class DbTiposTelefone(ListaUnica):
+    def __init__(self):
+        super().__init__(DBTipoTelefone)
+
+class DBDadoAgenda:
+    def __init__(self, nome):
+        self.nome = nome
+        self.telefones = DBTelefones()
+
+    @property
+    def nome(self):
+        return self._nome
+
+    @nome.setter
+    def nome(self, valor):
+        if not isinstance(valor, DBNome):
+            raise TypeError("nome deve ser uma instância de DBNome")
+        self._nome = DBNome(valor)
+    def pesquisaTelefone(self, telefone):
+        posicao = self.telefones.pesquisa(DBTelefone(telefone))
+        if posicao == -1:
+            return None
+        else:
+            return self.telefones[posicao]
