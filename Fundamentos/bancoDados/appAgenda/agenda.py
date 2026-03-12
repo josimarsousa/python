@@ -28,6 +28,14 @@ class DBAgenda:
             self.tiposTelefone.adiciona(DBTipoTelefone(id_, descricao))
 
     def cria_banco(self):
-        self.conexao.executescript(banco)
-    
-    
+        self.conexao.executescript(BANCO)
+
+    def pesquisaNome(self):
+        if not isinstance(nome, DBNome):
+            raise TypeError("nome deve ser do tipo DBNome") 
+        achado = self.conexao.execute(""" select count(*) from nomes where nome = ?""", (nome.nome,)).fetchone()
+        
+        if achado[0] > 0:
+            return self.carrega_por_nome(nome)
+        else:
+            return None
