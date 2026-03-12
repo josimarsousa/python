@@ -16,4 +16,18 @@ class DBAgenda:
         self.banco = banco
         novo = not os.path.isfile(banco)
         self.conexao = sqlite3.connect(banco)
-     
+        self.conexao.row_factory = sqlite3.Row
+        if novo:
+            self.cria_banco()
+        self.carregaTipos()
+    
+    def carregaTipos(self):
+        for tipo in self.conexao.execute("SELECT * FROM tipos"):
+            id_ = tipo["id"]
+            descricao = tipo["descricao"]
+            self.tiposTelefone.adiciona(DBTipoTelefone(id_, descricao))
+
+    def cria_banco(self):
+        self.conexao.executescript(banco)
+    
+    
