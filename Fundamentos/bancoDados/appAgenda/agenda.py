@@ -39,3 +39,6 @@ class DBAgenda:
             return self.carrega_por_nome(nome)
         else:
             return None
+    def carrega_por_id(self, nome):
+        consulta = self.conexao.execute("select * from nomes where nome = ?", (nome.nome,))
+        return self.carrega(consulta.fetchone())
