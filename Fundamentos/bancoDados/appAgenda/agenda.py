@@ -40,5 +40,12 @@ class DBAgenda:
         else:
             return None
     def carrega_por_id(self, nome):
-        consulta = self.conexao.execute("select * from nomes where nome = ?", (nome.nome,))
+        consulta = self.conexao.execute("select * from nomes where id = ?", (id,))
         return self.carrega(consulta.fetchone())
+
+    def carrega_por_nome(self, nome):
+        consulta = self.conexao.execute(
+            "select * from nomes where nome = ?", (nome.nome,))
+        return self.carrega(consulta.fetchone())
+
+    
