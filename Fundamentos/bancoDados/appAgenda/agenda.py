@@ -48,4 +48,17 @@ class DBAgenda:
             "select * from nomes where nome = ?", (nome.nome,))
         return self.carrega(consulta.fetchone())
 
-    
+    def carrega(self, consulta):
+        if consulta is None:
+            return None
+        novo = DBDadoAgenda(DBNome(consulta["nome"], consulta["id"]))
+        for telefone in self.conexao.execute(
+                    "select * from telefones where id_nome = ?", (novo.nome.id,)):
+            ntel = DBTelefone(telefone["numero"], None,
+                            telefone["id"], telefone["id_nome"])
+            for tipo in self.tiposTelefone: 
+                if tipo.id == telefone["id_tipo"]:
+                    ntel.tipo = tipo
+                    break
+            novo.telefones.adiciona(ntel)
+        return novo
