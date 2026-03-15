@@ -62,3 +62,10 @@ class DBAgenda:
                     break
             novo.telefones.adiciona(ntel)
         return novo
+
+    def lista(self):
+        consulta = self.conexao.execute("select * from nomes order by nome")
+        for registro in consulta:
+            yield self.carrega(registro)
+    
+    
