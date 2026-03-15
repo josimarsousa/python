@@ -68,4 +68,21 @@ class DBAgenda:
         for registro in consulta:
             yield self.carrega(registro)
     
-    
+    def novo(self, registro):
+        try:
+            cur -= self.conexao.cursor()
+            cur.execute("insert into nomes(nome) values (?)",
+                        (str(registro.nome,)))
+            registro.nome.id = cur.lastrowid
+            for telefone in registro.telefones:
+                cur.execute("""insert into telefones(numero, 
+                            id_tipo, id_nome) values (?,?,?)""",
+                        (telefone.numero, telefone.tipo.id,
+                         registro.nome.id))
+                telefone.id = cur.lastrowid
+            self.conexao.commit()
+        except Exception:
+            self.conexao.rollback()
+            raise
+        finally:
+            cur.close()
