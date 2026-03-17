@@ -114,3 +114,9 @@ class DBAgenda:
             raise
         finally:
             cur.close()
+
+    def apaga(self, registro):
+        try:
+            cur = self.conexao.cursor()
+            cur.execute("delete from telefones where id_nome = ?", (registro.nome.id,))
+          
