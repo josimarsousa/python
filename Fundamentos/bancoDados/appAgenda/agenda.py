@@ -86,3 +86,27 @@ class DBAgenda:
             raise
         finally:
             cur.close()
+
+    def atualiza(self, registro):
+        try:
+            cur = self.conexao.cursor()
+            cur.execute("update nomes set nome = ? where id = ?",
+                        (str(registro.nome), registro.nome.id))
+            for telefone in registro.telefones:
+                if telefone.id is None:
+                    cur.execute("""insert into telefones(numero, id_tipo, id_nome)
+                            values (?,?,?)""",
+                            (telefone.numero, telefone.tipo.id,
+                             registro.nome.id))
+                    telefone.id = cur.lastrowid
+                else:
+                    cur.execute("""update telefones set numero = ?, id_tipo = ?, id_nome = ?,
+                            where id = ?""",
+                            (telefone.numero, telefone.tipo.id,
+                             registro.nome.id,telefone.id))
+        
+        for apagado in registro.telefones.apagados:
+            cur.execute("delete from telefones where id = ?", (apagado,))
+        self.conexao.commit()
+        registro.telefones.limpa()
+        
