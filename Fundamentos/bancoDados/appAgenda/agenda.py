@@ -105,8 +105,12 @@ class DBAgenda:
                             (telefone.numero, telefone.tipo.id,
                              registro.nome.id,telefone.id))
         
-        for apagado in registro.telefones.apagados:
-            cur.execute("delete from telefones where id = ?", (apagado,))
-        self.conexao.commit()
-        registro.telefones.limpa()
-        
+            for apagado in registro.telefones.apagados:
+                cur.execute("delete from telefones where id = ?", (apagado,))
+            self.conexao.commit()
+            registro.telefones.limpa()
+        except Exception:
+            self.conexao.rollback()
+            raise
+        finally:
+            cur.close()
