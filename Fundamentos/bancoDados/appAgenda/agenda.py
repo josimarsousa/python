@@ -119,4 +119,10 @@ class DBAgenda:
         try:
             cur = self.conexao.cursor()
             cur.execute("delete from telefones where id_nome = ?", (registro.nome.id,))
-          
+            cur.execute("delete from nomes where id = ?", (registro.nome.id,))
+            self.conexao.commit()
+        except Exception:
+            self.conexao.rollback()
+            raise
+        finally:
+            cur.close()
