@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
-class Aplicacao:
+class Aplicacao(tk.Tk):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.contador_1 = 0
@@ -22,4 +22,16 @@ class Aplicacao:
         self.botao_2.pack()
         self.quadro.pack(expand=True)
 
+    def formata_contador(self, contador, valor):
+        return f"Contador {contador}: {valor}"
     
+    def conta_1(self):
+        self.contador_1 += 1
+        self.l_contador_1["text"] = self.formata_contador(1, self.contador_1)
+        
+    def conta_2(self):
+        self.contador_2 += 1
+        self.l_contador_2["text"] = self.formata_contador(2, self.contador_2)
+
+raiz = Aplicacao()
+raiz.mainloop()
