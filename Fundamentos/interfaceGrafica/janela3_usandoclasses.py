@@ -9,4 +9,17 @@ class Aplicacao:
         self.title("Contadores")
         self.geometry("250x100")
         self.cria_quadro()
-        
+
+    def cria_quadro(self):
+        self.quadro = ttk.Frame(self)
+        self.l_contador_1 = ttk.Label(self.quadro, text=self.formata_contador(1, self.contador_1))
+        self.l_contador_1.pack()
+        self.botao_1 = ttk.Button(self.quadro, text="Adiciona ao contador 1", command=self.conta_1)
+        self.botao_1.pack()
+        self.l_contador_2 = ttk.Label(self.quadro, text=self.formata_contador(2, self.contador_2))
+        self.l_contador_2.pack()
+        self.botao_2 = ttk.Button(self.quadro, text="Adiciona ao contador 2", command=self.conta_2)
+        self.botao_2.pack()
+        self.quadro.pack(expand=True)
+
+    
