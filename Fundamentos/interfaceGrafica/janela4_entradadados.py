@@ -10,4 +10,10 @@ class Aplicacao(tk.Tk):
     def cria_quadro(self):
         self.quadro = ttk.Frame(self)
         self.l_temperatura = ttk.Label(self.quadro, text="Temperatura:")
-               
+        self.l_temperatura.pack()
+        self.temperatura = ttk.Entry(self.quadro)
+        self.temperatura.pack()
+        self.botao_cf = ttk.Button(self.quadro, text="Converte para Fahrenheit")
+        self.botao_cf.pack()
+        self.botao_cf.pack()
+        
