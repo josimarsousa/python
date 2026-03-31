@@ -13,7 +13,12 @@ class Aplicacao(tk.Tk):
         self.l_temperatura.pack()
         self.temperatura = ttk.Entry(self.quadro)
         self.temperatura.pack()
-        self.botao_cf = ttk.Button(self.quadro, text="Converte para Fahrenheit")
+        self.botao_cf = ttk.Button(self.quadro, text="Celsius para Fahrenheit")
         self.botao_cf.pack()
-        self.botao_cf.pack()
-        
+        self.botao_fc = ttk.Button(self.quadro, text="Fahrenheit para Celsius")
+        self.botao_fc.pack()
+        self.resultado = ttk.Label(self.quadro, text="Resultado:")
+        self.resultado.pack()
+        self.quadro.pack(expand=True)
+
+    
