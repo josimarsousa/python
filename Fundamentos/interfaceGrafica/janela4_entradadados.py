@@ -21,4 +21,9 @@ class Aplicacao(tk.Tk):
         self.resultado.pack()
         self.quadro.pack(expand=True)
 
+    def celsius_para_fahrenheit(self):
+        temperatura = float(self.temperatura.get())
+        fahrenheit = 9/5.0 * temperatura + 32.0
+        self.resultado["text"] = f"{fahrenheit:5.2f}  \u00B0F"
+
     
