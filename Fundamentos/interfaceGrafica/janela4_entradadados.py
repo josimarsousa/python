@@ -26,4 +26,10 @@ class Aplicacao(tk.Tk):
         fahrenheit = 9/5.0 * temperatura + 32.0
         self.resultado["text"] = f"{fahrenheit:5.2f}  \u00B0F"
 
-    
+    def fahrenheit_para_celsius(self):
+        temperatura = float(self.temperatura.get())
+        celsius = (temperatura - 32.0) * 5/9.0
+        self.resultado["text"] = f"{celsius:5.2f}  \u00B0C"
+
+raiz = Aplicacao()
+raiz.mainloop()
