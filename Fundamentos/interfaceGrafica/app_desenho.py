@@ -38,6 +38,15 @@ class App(tk.Tk):
         self.barra = ttk.Frame(self.quadro, width=100, height=600)
         self.barra.grid(column=0, row=0, sticky=tk.NS)
 
+        self.blinha = ttk.Button(self.barra, text="Linha", padding="10", command=self.ferramenta_linha)
+        self.blinha.pack()
+
+        self.boval = ttk.Button(self.barra, text="Circulo", padding="10", command=self.ferramenta_oval)
+        self.boval.pack()
+
+        self.bretangulo = ttk.Button(self.barra, text="Retangulo", padding="10", command=self.ferramenta_retangulo)
+        self.bretangulo.pack()
+
     def mouse_move(self, event):
         self.coordenadas["text"] = f"Mouse x={event.x} y={event.y}"
         self.canvas.coords(self.cruz[0], event.x, 0, event.x, self.canvas.winfo_height())
@@ -56,6 +65,15 @@ class App(tk.Tk):
     def mouse_release(self, event):
         if self.estado == 1:
             self.estado = 0
+
+    def ferramenta_linha(self):
+        self.ferramenta = self.canvas.create_line
+    
+    def ferramenta_oval(self):
+        self.ferramenta = self.canvas.create_oval
+
+    def ferramenta_retangulo(self):
+        self.ferramenta = self.canvas.create_rectangle
 
 App().mainloop()
 
