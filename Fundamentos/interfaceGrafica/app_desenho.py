@@ -47,6 +47,12 @@ class App(tk.Tk):
         self.bretangulo = ttk.Button(self.barra, text="Retangulo", padding="10", command=self.ferramenta_retangulo)
         self.bretangulo.pack()
 
+        self.bdesfaz = ttk.Button(self.barra, text="Desfaz", padding="10", command=self.desfaz)
+        self.bdesfaz.pack()
+
+        blimpa = ttk.Button(self.barra, text="Limpa", padding="10", command=self.limpa)
+        blimpa.pack()
+
     def mouse_move(self, event):
         self.coordenadas["text"] = f"Mouse x={event.x} y={event.y}"
         self.canvas.coords(self.cruz[0], event.x, 0, event.x, self.canvas.winfo_height())
@@ -74,6 +80,13 @@ class App(tk.Tk):
 
     def ferramenta_retangulo(self):
         self.ferramenta = self.canvas.create_rectangle
+
+    def desfaz(self):
+        if itens := self.canvas.find_withtag("desenho"):
+            self.canvas.delete(itens[-1])
+
+    def limpa(self):
+        self.canvas.delete("desenho")
 
 App().mainloop()
 
