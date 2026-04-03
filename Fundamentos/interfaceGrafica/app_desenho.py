@@ -13,7 +13,13 @@ class App(tk.Tk):
         self.cruz = []
         self.cruz.append(self.canvas.create_line((0,0,0,0), dash=[2,4]))
         self.cruz.append(self.canvas.create_line((0,0,0,0), dash=[2,4]))
-    
+        self.cor_de_frente = "black"
+        self.estado = 0
+        self.xi = None
+        self.yi = None
+        self.curr_id = 0
+        self.ferramenta = self.canvas.create_line
+
     def cria_area_de_desenho(self):
         self.trabalho = ttk.Frame(self.quadro, height=600)
         self.trabalho.grid(column=1, row=0, sticky=tk.NSEW)
@@ -24,6 +30,9 @@ class App(tk.Tk):
         self.canvas.bind("<Motion>", self.mouse_move)
         self.coordenadas = tk.Label(self.trabalho, text="Mova o mouse")
         self.coordenadas.pack(ipadx=10, ipady=10)
+        self.canvas.bind("<Button-1>", self.mouse_click)
+        self.canvas.bind("<ButtonRelease-1>", self.mouse_release)
+
         
     def cria_barra(self):
         self.barra = ttk.Frame(self.quadro, width=100, height=600)
