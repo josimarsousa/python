@@ -42,6 +42,20 @@ class App(tk.Tk):
         self.coordenadas["text"] = f"Mouse x={event.x} y={event.y}"
         self.canvas.coords(self.cruz[0], event.x, 0, event.x, self.canvas.winfo_height())
         self.canvas.coords(self.cruz[1], 0, event.y, self.canvas.winfo_width(), event.y)
+        if self.estado ==1:
+            self.canvas.coords(self.curr_id, self.xi, self.yi, event.x, event.y)
+
+    def mouse_click(self, event):
+        if self.estado == 0:
+            self.xi = event.x
+            self.yi = event.y
+            self.curr_id = self.ferramenta((self.xi, self.yi, event.x, event.y),
+                fill=self.cor_de_frente, tags=["desenho"])
+            self.estado = 1
+
+    def mouse_release(self, event):
+        if self.estado == 1:
+            self.estado = 0
 
 App().mainloop()
 
