@@ -4,7 +4,7 @@ from tkinter import ttk
 class Aplicacao(tk.Tk):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.title("Conversos")
+        self.title("Conversor")
         self.cria_quadro()
 
     def cria_quadro(self):
@@ -13,9 +13,9 @@ class Aplicacao(tk.Tk):
         self.l_temperatura.pack()
         self.temperatura = ttk.Entry(self.quadro)
         self.temperatura.pack()
-        self.botao_cf = ttk.Button(self.quadro, text="Celsius para Fahrenheit")
+        self.botao_cf = ttk.Button(self.quadro, text="Celsius para Fahrenheit", command=self.celsius_para_fahrenheit)
         self.botao_cf.pack()
-        self.botao_fc = ttk.Button(self.quadro, text="Fahrenheit para Celsius")
+        self.botao_fc = ttk.Button(self.quadro, text="Fahrenheit para Celsius", command=self.fahrenheit_para_celsius)
         self.botao_fc.pack()
         self.resultado = ttk.Label(self.quadro, text="Resultado:")
         self.resultado.pack()
