@@ -1,0 +1,17 @@
+#sistema para carregar sites
+from uuid import uuid4
+from datetime import datetime
+
+class Site:
+    def __init__(self, /, url=None, categoria=None, data=None, id=None, notas=None):
+        if id is None:
+            id = str(uuid4())
+        self.id = id
+        if data is None:
+            data = date.today().strftime("%d-%m-%y")
+        self.data = data
+        self.url = url
+        self.categoria = categoria
+        self.notas = notas
+
+        
