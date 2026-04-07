@@ -14,4 +14,5 @@ class Site:
         self.categoria = categoria
         self.notas = notas
 
-        
+    def __str__(self):
+        return f"Site {self.id} {self.url} {self.categoria} {self.notas}"

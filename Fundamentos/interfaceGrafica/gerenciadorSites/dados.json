@@ -1,0 +1,14 @@
+[
+    {
+        "url": "https://python.org.br",
+        "categoria": "Python",
+        "data": "05-04-2025",
+        "notas": "Um bom site para aprender Python  "
+    },
+    {
+        "url": "https://www.novatec.com.br",
+        "categoria": "Python",
+        "data": "05-04-2020",
+        "notas": "Editora"
+    }
+]
