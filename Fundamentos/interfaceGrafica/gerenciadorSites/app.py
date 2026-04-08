@@ -41,4 +41,11 @@ class App(tk.Tk):
         self.quadro.grid_rowconfigure(0, weight=1)
         self.quadro.pack(expand=True, fill=tk.BOTH, padx=10, pady=10)
         
-       
+    def adiciona_site_a_tabela(self, site):
+        self.tabela.insert("", tk.END, values=(site.url, site.categoria, site.data, site.notas), iid=site.id)
+
+    def mostra_dados(self):
+        for site in self.gerente.sites.values():
+            self.adiciona_site_a_tabela(site)
+
+App().mainloop()   
