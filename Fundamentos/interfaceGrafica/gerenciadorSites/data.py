@@ -17,4 +17,7 @@ class Data(ttk.Frame):
         self.mes.set(mes)
         self.ano.set(ano)
 
+    def get(self):
+        return f"{self.dia.get()}-{self.mes.get()}-{self.ano.get()}"
+
     
