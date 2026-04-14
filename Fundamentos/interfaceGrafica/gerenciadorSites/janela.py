@@ -25,5 +25,10 @@ class Janela(tk.Toplevel):
         self.t_notas.delete("1.0", tk.END)
         self.t_notas.insert(tk.END, self.site.notas or "")
     
-    
+    def cria_controles(self):
+        self.f_url = ttk.Frame(self)
+        self.f_url.grid(row=0, column=0, columnspan=3, sticky=tk.EW, **self.padding)
+        self.l_url = ttk.Label(self.f_url, text="URL")
+        self.l_url.pack(anchor=tk.W)
+        
 
