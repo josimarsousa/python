@@ -30,5 +30,7 @@ class Janela(tk.Toplevel):
         self.f_url.grid(row=0, column=0, columnspan=3, sticky=tk.EW, **self.padding)
         self.l_url = ttk.Label(self.f_url, text="URL")
         self.l_url.pack(anchor=tk.W)
-        
+        self.url = tk.StringVar()
+        self.e_url = ttk.Entry(self.f_url, textvariable=self.url)
+
 
