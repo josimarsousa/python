@@ -32,5 +32,13 @@ class Janela(tk.Toplevel):
         self.l_url.pack(anchor=tk.W)
         self.url = tk.StringVar()
         self.e_url = ttk.Entry(self.f_url, textvariable=self.url)
+        self.e_url.pack(fill=tk.X, expand=True)
+        self.f_categoria = ttk.Frame(self)
+        self.f_categoria.grid(row=1, column=0, columnspan=3, sticky=tk.W, **self.padding)
+        self.l_categoria = ttk.Label(self.f_categoria, text="Categoria")
+        self.l_categoria.pack(anchor=tk.W)
+        self.categoria = tk.StringVar()
+        self.e_categoria = ttk.Entry(self.f_categoria, textvariable=self.categoria)
+        self.e_categoria.pack()
 
 
