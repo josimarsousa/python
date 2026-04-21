@@ -61,5 +61,17 @@ class Janela(tk.Toplevel):
         self.b_ok.pack(stde=tk.LEFT)
         self.b_cancelar = ttk.Button(self.b_frame, text="Cancelar", command=self.fecha)
         self.b_cancelar.pack(side=tk.LEFT)
+    
+    def fecha(self):
+        self.destroy()
+
+    def ok(self):
+        self.site.url = self.url.get()
+        self.site.categoria = self.categoria.get()
+        self.site.data = self.data.get()
+        self.site.notas = self.t_notas.get("1.0", tk.END)
+        if self.on_change:
+            self.on_change(self.site)
+        self.fecha()
 
 
