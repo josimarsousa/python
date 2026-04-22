@@ -65,4 +65,12 @@ class App(tk.Tk):
         self.janela = Janela(self, site, on_change=self.atualiza)
         self.janela.grab_set()
 
+    def atualiza(self, site):
+        if self.tabela.exists(site.id):
+            self.tabela.item(site.id, text="",
+                values=(site.url, site.categoria, site.data, site.notas))
+        else:
+            self.adiciona_site_a_tabela(site)
+        self.gerente.sites[site.id] = site
+
 App().mainloop()   
