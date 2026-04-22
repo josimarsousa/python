@@ -1,6 +1,7 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 from gerente import GerenteSites
+from janela import Janela
 
 class App(tk.Tk):
     MIN_X = 800
@@ -38,6 +39,7 @@ class App(tk.Tk):
         self.quadro.grid_columnconfigure(0, weight=1)
         self.quadro.grid_rowconfigure(0, weight=1)
         self.quadro.pack(expand=True, fill=tk.BOTH, padx=10, pady=10)
+        self.tabela.bind("<Double-Button-1>", self.abre_janela)
         
     def adiciona_site_a_tabela(self, site):
         self.tabela.insert("", tk.END, values=(site.url, site.categoria, site.data, site.notas), iid=site.id)
@@ -45,5 +47,22 @@ class App(tk.Tk):
     def mostra_dados(self):
         for site in self.gerente.sites.values():
             self.adiciona_site_a_tabela(site)
+
+    def pega_selecionado(self):
+        if item_selecionado := self.tabela.selection():
+            id_selecionado = item_selecionado[0]
+            return id_selecionado
+        return None
+
+    def abre_janela(self, event):
+        if id_selecionado := self.pega_selecionado():
+            site = self.gerente.sites[id_selecionado]
+        else:
+            site = None
+        self.mostra_site(site)
+
+    def mostra_site(self, site):
+        self.janela = Janela(self, site, on_change=self.atualiza)
+        self.janela.grab_set()
 
 App().mainloop()   

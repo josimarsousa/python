@@ -1,6 +1,6 @@
 import tkinter as tk
 import tkinter.ttk as ttk
-from cadastraSite import CadastraSite
+from cadastro_site import Site
 from data import Data
 
 class Janela(tk.Toplevel):
