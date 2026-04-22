@@ -61,6 +61,11 @@ class Janela(tk.Toplevel):
         self.b_ok.pack(side=tk.LEFT)
         self.b_cancelar = ttk.Button(self.b_frame, text="Cancelar", command=self.fecha)
         self.b_cancelar.pack(side=tk.LEFT)
+        self.menu = tk.Menu(self)
+        self.m_arquivo = tk.Menu(self.menu, tearoff=0)
+        self.m_arquivo.add_command(label="Ler", command=self.le)
+        self.menu.add_command(label="Gravar", menu=self.grava)
+        self.m_sites = tk.Menu(self.menu, tearoff=0)
     
     def fecha(self):
         self.destroy()
