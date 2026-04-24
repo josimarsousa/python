@@ -66,6 +66,19 @@ class Janela(tk.Toplevel):
         self.m_arquivo.add_command(label="Ler", command=self.le)
         self.menu.add_command(label="Gravar", menu=self.grava)
         self.m_sites = tk.Menu(self.menu, tearoff=0)
+        self.m_sites.add_command(label="Adiciona", command=self.adiciona)
+        self.m_sites.add_command(label="Apaga", command=self.apaga)
+        self.m_sites.add_separator()
+        self.m_sites.add_command(label="Apaga todos", command=self.apaga_todos)
+        self.menu.add_cascade(label="Sites", menu=self.m_sites)
+        self.menu.add_cascade(label="Arquivo", menu=self.m_arquivo)
+        self.menu.add_command(label="Sites", command=self.m_sites)
+        self.menu.add_command(label="Sobre", command=self.sai)
+        self.config(menu=self.menu)
+    
+    def novo(self):
+        self.site = Site()
+        self.captura_site(self.site)
     
     def fecha(self):
         self.destroy()
