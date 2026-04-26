@@ -2,6 +2,8 @@ import tkinter as tk
 import tkinter.ttk as ttk
 from gerente import GerenteSites
 from janela import Janela
+from tkinter.filedialog import asksaveasfilename, askopenfilename
+from tkinter.messagebox import askquestion, showinfo
 
 class App(tk.Tk):
     MIN_X = 800
@@ -40,6 +42,51 @@ class App(tk.Tk):
         self.quadro.grid_rowconfigure(0, weight=1)
         self.quadro.pack(expand=True, fill=tk.BOTH, padx=10, pady=10)
         self.tabela.bind("<Double-Button-1>", self.abre_janela)
+        self.menu = tk.Menu(self)
+        self.m_arquivo = tk.Menu(self.menu, tearoff=0)
+        self.m_arquivo.add_command(label="Ler", command=self.le)
+        self.m_arquivo.add_command(label="Gravar", command=self.grava)
+        self.m_sites = tk.Menu(self.menu, tearoff=0)
+        self.m_sites.add_command(label="Adiciona", command=self.adiciona)
+        self.m_sites.add_command(label="Apaga", command=self.apaga)
+        self.m_sites.add_separator()
+        self.m_sites.add_command(label="Apaga todos", command=self.apaga_todos)
+        self.menu.add_cascade(label="Sites", menu=self.m_sites)
+        self.menu.add_cascade(label="Arquivo", menu=self.m_arquivo)
+        self.menu.add_command(label="Sites", command=self.m_sites)
+        self.menu.add_command(label="Sobre", command=self.sobre)
+        self.config(menu=self.menu)
+
+    def adiciona(self):
+        self.mostra_site(None)
+
+    def apaga(self):
+        if id_selecionado := self.pega_selecionado():
+            del self.gerente.sites[id_selecionado]
+            self.tabela.delete(id_selecionado)
+
+    def apaga_todos(self):
+        if (askquestion(title="Apagar todos os sites?",
+                        message="Confirma apagar todos os sites?") == "yes"):
+                self.limpa()
+    
+    def limpa(self):
+        self.gerente.sites.clear()
+        self.tabela.delete(*self.tabela.get_children())
+
+    def sobre(self):
+        showinfo(title="Sobre", message="Gerenciador de Sites - introdução a programação python3")
+
+    def le(self):
+        if nome := askopenfilename(filetypes=["JSON", "*.json"]):
+            self.limpa()
+            self.gerente.carrega(nome)
+            self.mostra_dados()
+    
+    def grava(self):
+        if nome := asksaveasfilename(
+            filetypes=[("JSON", "*.json")], defaultextension=".json"):
+            self.gerente.grava(nome)
         
     def adiciona_site_a_tabela(self, site):
         self.tabela.insert("", tk.END, values=(site.url, site.categoria, site.data, site.notas), iid=site.id)
