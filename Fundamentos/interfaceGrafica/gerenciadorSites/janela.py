@@ -62,10 +62,6 @@ class Janela(tk.Toplevel):
         self.b_cancelar = ttk.Button(self.b_frame, text="Cancelar", command=self.fecha)
         self.b_cancelar.pack(side=tk.LEFT)
     
-    def novo(self):
-        self.site = Site()
-        self.captura_site(self.site)
-    
     def fecha(self):
         self.destroy()
 

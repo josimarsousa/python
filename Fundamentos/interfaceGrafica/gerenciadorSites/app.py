@@ -1,9 +1,10 @@
 import tkinter as tk
 import tkinter.ttk as ttk
-from gerente import GerenteSites
-from janela import Janela
 from tkinter.filedialog import asksaveasfilename, askopenfilename
 from tkinter.messagebox import askquestion, showinfo
+from gerente import GerenteSites
+from janela import Janela
+
 
 class App(tk.Tk):
     MIN_X = 800
@@ -17,17 +18,19 @@ class App(tk.Tk):
         self.gerente.carrega("dados.json")
         self.mostra_dados()
         self.minsize(self.MIN_X, self.MIN_Y)
+        
 
     def cria_controles(self):
+        
         self.quadro = ttk.Frame(self)
         self.quadro.grid(row=0, column=0, columnspan=2, padx=10, pady=10, sticky=tk.NSEW)
         self.grid_rowconfigure(0, weight=1)
         self.tabela = ttk.Treeview(self.quadro, columns=["url", "categoria", "data", "notas"], show="headings")
         self.tabela.heading("url", text="URL")
         self.tabela.heading("categoria", text="Categoria")
-        self.tabela.heading("categoria", anchor=tk.CENTER)
+        self.tabela.column("categoria", anchor=tk.CENTER)
         self.tabela.heading("data", text="Data")
-        self.tabela.heading("data", anchor=tk.CENTER)
+        self.tabela.column("data", anchor=tk.CENTER)
         self.tabela.heading("notas", text="Notas")
         self.tabela.grid(
             row=0,
@@ -37,11 +40,11 @@ class App(tk.Tk):
         self.tabela.config(selectmode="browse")
         scrollbar = ttk.Scrollbar(self.quadro ,orient=tk.VERTICAL, command=self.tabela.yview)
         self.tabela.configure(yscroll=scrollbar.set)
-        scrollbar.grid(row=0, column=1, sticky=tk.NSEW)
+        self.tabela.bind("<Double-Button-1>", self.abre_janela)
+        scrollbar.grid(row=0, column=1, sticky=tk.NS)
         self.quadro.grid_columnconfigure(0, weight=1)
         self.quadro.grid_rowconfigure(0, weight=1)
         self.quadro.pack(expand=True, fill=tk.BOTH, padx=10, pady=10)
-        self.tabela.bind("<Double-Button-1>", self.abre_janela)
         self.menu = tk.Menu(self)
         self.m_arquivo = tk.Menu(self.menu, tearoff=0)
         self.m_arquivo.add_command(label="Ler", command=self.le)
@@ -51,11 +54,11 @@ class App(tk.Tk):
         self.m_sites.add_command(label="Apaga", command=self.apaga)
         self.m_sites.add_separator()
         self.m_sites.add_command(label="Apaga todos", command=self.apaga_todos)
-        self.menu.add_cascade(label="Sites", menu=self.m_sites)
         self.menu.add_cascade(label="Arquivo", menu=self.m_arquivo)
-        self.menu.add_command(label="Sites", command=self.m_sites)
+        self.menu.add_cascade(label="Sites", menu=self.m_sites)
         self.menu.add_command(label="Sobre", command=self.sobre)
         self.config(menu=self.menu)
+        
 
     def adiciona(self):
         self.mostra_site(None)
