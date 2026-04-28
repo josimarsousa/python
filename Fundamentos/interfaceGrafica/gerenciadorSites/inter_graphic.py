@@ -1,23 +1,28 @@
 import tkinter as tk
 
-def acao_sair():
-    print("Saindo...")
-    root.quit()
+def acao_exemplo():
+    print("Botão clicado!")
 
-root = tk.Tk()
-root.title("Exemplo de menu")
-root.geometry("300x200")
+# 1. Configuração da Janela Principal
+janela = tk.Tk()
+janela.title("Meu App com Menu")
+janela.geometry("400x300")
 
-menubar = tk.Menu(root)
+# 2. Criação da Barra de Menu (o container principal)
+barra_menu = tk.Menu(janela)
 
-filemenu = tk.Menu(menubar, tearoff=0)
-filemenu.add_command(label="Novo")
-filemenu.add_command(label="Abrir")
-filemenu.add_separator()
-filemenu.add_command(label="Sair", command=acao_sair)
+# 3. Criação de um Menu Individual (ex: Arquivo)
+menu_arquivo = tk.Menu(barra_menu, tearoff=0)
+menu_arquivo.add_command(label="Novo", command=acao_exemplo)
+menu_arquivo.add_command(label="Salvar", command=acao_exemplo)
+menu_arquivo.add_separator() # Linha divisória
+menu_arquivo.add_command(label="Sair", command=janela.quit)
 
-menubar.add_cascade(label="Arquivo", menu=filemenu)
+# 4. Adicionando o menu "Arquivo" à Barra de Menu principal
+barra_menu.add_cascade(label="Arquivo", menu=menu_arquivo)
 
-root.config(menu=menubar)
+# 5. Configurando a janela para usar essa barra
+janela.config(menu=barra_menu)
 
-root.mainloop()
+janela.mainloop()
+
