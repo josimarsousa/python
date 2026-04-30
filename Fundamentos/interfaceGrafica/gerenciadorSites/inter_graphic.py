@@ -15,6 +15,7 @@ barra_menu = tk.Menu(janela)
 menu_arquivo = tk.Menu(barra_menu, tearoff=0)
 menu_arquivo.add_command(label="Novo", command=acao_exemplo)
 menu_arquivo.add_command(label="Salvar", command=acao_exemplo)
+menu_arquivo.add_command(label="Consultas", command=acao_exemplo)
 menu_arquivo.add_separator() # Linha divisória
 menu_arquivo.add_command(label="Sair", command=janela.quit)
 
