@@ -9,3 +9,4 @@ class Contador:
 
     def incrementa(self):
         self.contador += 1
+

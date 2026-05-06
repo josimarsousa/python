@@ -7,3 +7,6 @@ with sqlite3.connect("agenda.db") as conexao:
                         set telefone = '35987653434'
                         where nome = 'João'""")
         conexao.commit()
+
+cursor.close()
+conexao.close()
